@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E8C8F2940A5D300DA97F107 /* Pods_SHRestClientExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */; };
+		8FC1128C949C2A42D569E32B /* Pods_SHRestClientExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */; };
 		9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */; };
 		9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4441F287FA60012AAF0 /* ViewController.swift */; };
 		9F0FA4481F287FA60012AAF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4461F287FA60012AAF0 /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		9F0FA4761F287FBB0012AAF0 /* SHReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */; };
 		9F0FA4771F287FBB0012AAF0 /* SHRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */; };
 		9F0FA4781F287FBB0012AAF0 /* SHRestClientUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */; };
+		E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample.debug.xcconfig"; sourceTree = "<group>"; };
+		422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample.release.xcconfig"; sourceTree = "<group>"; };
+		8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0FA43F1F287FA60012AAF0 /* SHRestClientExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHRestClientExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F0FA4441F287FA60012AAF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +62,11 @@
 		9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHReachabilityManager.swift; sourceTree = "<group>"; };
 		9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClient.swift; sourceTree = "<group>"; };
 		9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClientUtilities.swift; sourceTree = "<group>"; };
+		AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E8C8F2940A5D300DA97F107 /* Pods_SHRestClientExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC1128C949C2A42D569E32B /* Pods_SHRestClientExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +104,8 @@
 				9F0FA4561F287FA60012AAF0 /* SHRestClientExampleTests */,
 				9F0FA4611F287FA60012AAF0 /* SHRestClientExampleUITests */,
 				9F0FA4401F287FA60012AAF0 /* Products */,
+				ADD2A636AFC6A055A3023727 /* Pods */,
+				C3A43A203F51DBA80142EAE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +162,29 @@
 			path = SHRestClient;
 			sourceTree = "<group>";
 		};
+		ADD2A636AFC6A055A3023727 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */,
+				422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */,
+				8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */,
+				0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */,
+				AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */,
+				B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3A43A203F51DBA80142EAE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */,
+				B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */,
+				B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F0FA4671F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExample" */;
 			buildPhases = (
+				F107A2435180D70C362D0E9C /* [CP] Check Pods Manifest.lock */,
 				9F0FA43B1F287FA60012AAF0 /* Sources */,
 				9F0FA43C1F287FA60012AAF0 /* Frameworks */,
 				9F0FA43D1F287FA60012AAF0 /* Resources */,
+				C4B0949185E54B1D32E96DD5 /* [CP] Embed Pods Frameworks */,
+				8508A066B40488EF009EF32F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F0FA46A1F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExampleTests" */;
 			buildPhases = (
+				FF75A0021FC18AEDD00560F9 /* [CP] Check Pods Manifest.lock */,
 				9F0FA44F1F287FA60012AAF0 /* Sources */,
 				9F0FA4501F287FA60012AAF0 /* Frameworks */,
 				9F0FA4511F287FA60012AAF0 /* Resources */,
+				6D690929BC1A2FABDDE34E99 /* [CP] Embed Pods Frameworks */,
+				B541BFE3142ABF35C8E4C832 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -187,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F0FA46D1F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExampleUITests" */;
 			buildPhases = (
+				AB68DA4DE79C681DA21C4578 /* [CP] Check Pods Manifest.lock */,
 				9F0FA45A1F287FA60012AAF0 /* Sources */,
 				9F0FA45B1F287FA60012AAF0 /* Frameworks */,
 				9F0FA45C1F287FA60012AAF0 /* Resources */,
+				54EAD1BDC6001318BB6751AD /* [CP] Embed Pods Frameworks */,
+				FCE28DD67A4E8B7672851B3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,6 +325,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54EAD1BDC6001318BB6751AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D690929BC1A2FABDDE34E99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8508A066B40488EF009EF32F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB68DA4DE79C681DA21C4578 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B541BFE3142ABF35C8E4C832 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4B0949185E54B1D32E96DD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F107A2435180D70C362D0E9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FCE28DD67A4E8B7672851B3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF75A0021FC18AEDD00560F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F0FA43B1F287FA60012AAF0 /* Sources */ = {
@@ -437,6 +624,7 @@
 		};
 		9F0FA4681F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
@@ -450,6 +638,7 @@
 		};
 		9F0FA4691F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
@@ -463,6 +652,7 @@
 		};
 		9F0FA46B1F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -478,6 +668,7 @@
 		};
 		9F0FA46C1F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +684,7 @@
 		};
 		9F0FA46E1F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
@@ -507,6 +699,7 @@
 		};
 		9F0FA46F1F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
