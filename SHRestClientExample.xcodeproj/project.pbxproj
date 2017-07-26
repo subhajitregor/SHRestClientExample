@@ -14,6 +14,10 @@
 		9F0FA44D1F287FA60012AAF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA44B1F287FA60012AAF0 /* LaunchScreen.storyboard */; };
 		9F0FA4581F287FA60012AAF0 /* SHRestClientExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4571F287FA60012AAF0 /* SHRestClientExampleTests.swift */; };
 		9F0FA4631F287FA60012AAF0 /* SHRestClientExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4621F287FA60012AAF0 /* SHRestClientExampleUITests.swift */; };
+		9F0FA4751F287FBB0012AAF0 /* SHHTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4711F287FBB0012AAF0 /* SHHTTPBody.swift */; };
+		9F0FA4761F287FBB0012AAF0 /* SHReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */; };
+		9F0FA4771F287FBB0012AAF0 /* SHRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */; };
+		9F0FA4781F287FBB0012AAF0 /* SHRestClientUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		9F0FA45E1F287FA60012AAF0 /* SHRestClientExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHRestClientExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0FA4621F287FA60012AAF0 /* SHRestClientExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRestClientExampleUITests.swift; sourceTree = "<group>"; };
 		9F0FA4641F287FA60012AAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F0FA4711F287FBB0012AAF0 /* SHHTTPBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHHTTPBody.swift; sourceTree = "<group>"; };
+		9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHReachabilityManager.swift; sourceTree = "<group>"; };
+		9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClient.swift; sourceTree = "<group>"; };
+		9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClientUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		9F0FA4411F287FA60012AAF0 /* SHRestClientExample */ = {
 			isa = PBXGroup;
 			children = (
+				9F0FA4701F287FBB0012AAF0 /* SHRestClient */,
 				9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */,
 				9F0FA4441F287FA60012AAF0 /* ViewController.swift */,
 				9F0FA4461F287FA60012AAF0 /* Main.storyboard */,
@@ -123,6 +132,17 @@
 				9F0FA4641F287FA60012AAF0 /* Info.plist */,
 			);
 			path = SHRestClientExampleUITests;
+			sourceTree = "<group>";
+		};
+		9F0FA4701F287FBB0012AAF0 /* SHRestClient */ = {
+			isa = PBXGroup;
+			children = (
+				9F0FA4711F287FBB0012AAF0 /* SHHTTPBody.swift */,
+				9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */,
+				9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */,
+				9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */,
+			);
+			path = SHRestClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */,
+				9F0FA4761F287FBB0012AAF0 /* SHReachabilityManager.swift in Sources */,
+				9F0FA4781F287FBB0012AAF0 /* SHRestClientUtilities.swift in Sources */,
+				9F0FA4751F287FBB0012AAF0 /* SHHTTPBody.swift in Sources */,
 				9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */,
+				9F0FA4771F287FBB0012AAF0 /* SHRestClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
