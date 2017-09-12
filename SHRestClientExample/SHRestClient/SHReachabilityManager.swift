@@ -17,15 +17,19 @@ class SHReachabilityManager: NSObject {
 
     static let shared = SHReachabilityManager()    
     
-    var isNetworkAvailable: Bool {
-        return reachabilityStatus != .notReachable
-    }
+    
     
     var reachabilityStatus : Reachability.NetworkStatus = .notReachable
     
     let reachability = Reachability()!
     
     var listeners = [SHReachabilityDelegate]()
+    
+    var isNetworkAvailable: Bool {
+
+        return reachabilityStatus != .notReachable
+    
+    }
     
     func addListner(listener: SHReachabilityDelegate) {
         listeners.append(listener)
@@ -59,9 +63,13 @@ class SHReachabilityManager: NSObject {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityChanged), name: ReachabilityChangedNotification, object: reachability)
         
         do {
+            
             try reachability.startNotifier()
+            
         } catch {
+            
             debugPrint("Could not start reachability notifier")
+            
         }
     }
     

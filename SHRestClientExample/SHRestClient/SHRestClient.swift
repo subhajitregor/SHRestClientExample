@@ -13,10 +13,12 @@ class SHRestClient: NSObject {
     
     typealias SHHTTPResponseBlock = (Any?, HTTPURLResponse?, Error?) -> Void
     typealias SHReachabilityErrorBlock = () -> Void
+    typealias SHErrorBlock = (SHRestClientErrorType,Error?) -> Void
+    typealias SHSuccessBlock = (Any?, HTTPURLResponse?) -> Void
     
     var urlString : String
     
-    private var httpBody: SHHTTPBody = SHHTTPBody()
+    private var httpBody: Dictionary<String, String>
     private var httpHeaders: [String: String] = ["":""]
     private var httpSessionConfiguration: URLSessionConfiguration = .default
     var sessionConfiguration: URLSessionConfiguration {
@@ -30,13 +32,16 @@ class SHRestClient: NSObject {
     
     init(with url: String!) {
         self.urlString = url
+        self.httpBody = [:]
     }
     
     func addHeader(key: String!, value: String!) {
         httpHeaders.updateValue(value, forKey: key)
     }
     
-    
+    func get(parameters: [String: String], headers: [String: String], success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
+        
+    }
     
     func get(response: @escaping SHHTTPResponseBlock, reachability: @escaping SHReachabilityErrorBlock) {
         if SHReachabilityManager.shared.isNetworkAvailable {
@@ -62,9 +67,9 @@ class SHRestClient: NSObject {
                     }
                     
                     do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [String: Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
-                        } else if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
+                        } else if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
                         }
                     } catch {
@@ -110,9 +115,9 @@ class SHRestClient: NSObject {
                     }
                     
                     do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [String: Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
-                        } else if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
+                        } else if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
                         }
                     } catch {
@@ -157,9 +162,9 @@ class SHRestClient: NSObject {
                     }
                     
                     do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [String: Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
-                        } else if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [Any] {
+                        } else if let json = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves]) as? [Any] {
                             response(json, urlResponse as? HTTPURLResponse, nil)
                         }
                     } catch {
