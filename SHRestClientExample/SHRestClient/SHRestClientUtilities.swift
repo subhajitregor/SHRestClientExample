@@ -19,6 +19,7 @@ enum SHRestClientErrorType {
     
     case reachability
     case error
+    case jsonError
 }
 
 extension Data {
@@ -29,6 +30,44 @@ extension Data {
         
     }
 }
+
+class ProgressHUD: UIView {
+        
+    static let shared = ProgressHUD()
+    
+    let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    
+    init() {
+        super.init(frame: CGRect.zero)
+        self.indicatorView.hidesWhenStopped = true
+        
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func show() {
+        self.indicatorView.color = UIColor.green
+        let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
+        
+        self.indicatorView.center = (appDelegate?.window?.center)!
+        
+        appDelegate?.window?.addSubview(self.indicatorView)
+        
+        self.indicatorView.startAnimating()
+        
+    }
+    
+    func hide() {
+        
+        self.indicatorView.stopAnimating()
+        self.indicatorView.removeFromSuperview()
+        
+    }
+}
+
 
 extension AppDelegate {
     

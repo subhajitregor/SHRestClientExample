@@ -9,7 +9,7 @@
 import UIKit
 import ReachabilitySwift
 
-public protocol SHReachabilityDelegate: class {
+public protocol SHReachabilityManagerDelegate: class {
     func networkStatusDidChange(status: Reachability.NetworkStatus)
 }
 
@@ -23,7 +23,7 @@ class SHReachabilityManager: NSObject {
     
     let reachability = Reachability()!
     
-    var listeners = [SHReachabilityDelegate]()
+    var listeners = [SHReachabilityManagerDelegate]()
     
     var isNetworkAvailable: Bool {
 
@@ -31,11 +31,11 @@ class SHReachabilityManager: NSObject {
     
     }
     
-    func addListner(listener: SHReachabilityDelegate) {
+    func addListner(listener: SHReachabilityManagerDelegate) {
         listeners.append(listener)
     }
     
-    func removeListener(listener: SHReachabilityDelegate) {
+    func removeListener(listener: SHReachabilityManagerDelegate) {
         listeners = listeners.filter{$0 !== listener}
     }
     

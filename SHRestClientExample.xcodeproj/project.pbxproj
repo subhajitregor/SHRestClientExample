@@ -20,6 +20,7 @@
 		9F0FA4761F287FBB0012AAF0 /* SHReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */; };
 		9F0FA4771F287FBB0012AAF0 /* SHRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */; };
 		9F0FA4781F287FBB0012AAF0 /* SHRestClientUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */; };
+		9FF8B39F1F778E400020D28A /* SHHTTPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8B39E1F778E400020D28A /* SHHTTPCache.swift */; };
 		E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHReachabilityManager.swift; sourceTree = "<group>"; };
 		9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClient.swift; sourceTree = "<group>"; };
 		9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClientUtilities.swift; sourceTree = "<group>"; };
+		9FF8B39E1F778E400020D28A /* SHHTTPCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHHTTPCache.swift; sourceTree = "<group>"; };
 		AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				9F0FA4721F287FBB0012AAF0 /* SHReachabilityManager.swift */,
 				9F0FA4731F287FBB0012AAF0 /* SHRestClient.swift */,
 				9F0FA4741F287FBB0012AAF0 /* SHRestClientUtilities.swift */,
+				9FF8B39E1F778E400020D28A /* SHHTTPCache.swift */,
 			);
 			path = SHRestClient;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				9F0FA4781F287FBB0012AAF0 /* SHRestClientUtilities.swift in Sources */,
 				9F0FA4751F287FBB0012AAF0 /* SHHTTPBody.swift in Sources */,
 				9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */,
+				9FF8B39F1F778E400020D28A /* SHHTTPCache.swift in Sources */,
 				9F0FA4771F287FBB0012AAF0 /* SHRestClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +735,7 @@
 				9F0FA4691F287FA60012AAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F0FA46A1F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -739,6 +744,7 @@
 				9F0FA46C1F287FA60012AAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F0FA46D1F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -747,6 +753,7 @@
 				9F0FA46F1F287FA60012AAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
