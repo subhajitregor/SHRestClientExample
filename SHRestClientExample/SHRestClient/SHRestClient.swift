@@ -286,6 +286,13 @@ extension SHRestClient: SHReachabilityManagerDelegate {
         
         if status == .notReachable {
             // TODO: Present a reachability view controller in current window
+            let topVC = AppDelegate.getTopViewController()
+            guard let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main) as? UIStoryboard else { return }
+            
+            guard let reachabilityVC = storyBoard.instantiateViewController(withIdentifier: "") as? UIViewController else { return }
+            
+//            topVC?.present(reachabilityVC, animated: true, completion: nil)
+           
             
         } else {
             
