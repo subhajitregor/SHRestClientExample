@@ -6,7 +6,7 @@ target 'SHRestClientExample' do
   use_frameworks!
 
   # Pods for SHRestClientExample
-  pod 'ReachabilitySwift', '~> 3'
+  pod 'ReachabilitySwift'
 
 
   target 'SHRestClientExampleTests' do

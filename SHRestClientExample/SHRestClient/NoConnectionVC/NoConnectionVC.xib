@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoConnectionVC" customModule="SHRestClientExample" customModuleProvider="target">
+            <connections>
+                <outlet property="imageViewMiddle" destination="8xB-DU-aE4" id="M7L-94-Ftp"/>
+                <outlet property="labelSubtitle" destination="ylu-ux-Nxt" id="Aig-jv-54g"/>
+                <outlet property="labelTitle" destination="EST-l8-cED" id="sZy-aR-oDA"/>
+                <outlet property="view" destination="iN0-l3-epB" id="MiW-rh-X7B"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-wifi.png" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-DU-aE4">
+                    <rect key="frame" x="137.5" y="200" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8xB-DU-aE4" secondAttribute="height" multiplier="1:1" id="4JU-yR-efg"/>
+                        <constraint firstAttribute="width" constant="100" id="zYj-Lc-7hX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EST-l8-cED">
+                    <rect key="frame" x="20" y="320" width="335" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylu-ux-Nxt">
+                    <rect key="frame" x="20" y="344" width="335" height="84"/>
+                    <string key="text">This is a demo VC to show as an example, you can replace it by assigning a new VC for showing in this place, refer to ReadMe. 
+This VC will dismiss as soon as internet connection comes.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ylu-ux-Nxt" secondAttribute="trailing" constant="20" id="6HZ-p4-EAk"/>
+                <constraint firstItem="8xB-DU-aE4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.75" id="7ud-sG-uXM"/>
+                <constraint firstItem="8xB-DU-aE4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FdJ-o9-EMA"/>
+                <constraint firstItem="ylu-ux-Nxt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="InY-3S-xXY"/>
+                <constraint firstItem="EST-l8-cED" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="O5y-bs-alY"/>
+                <constraint firstItem="EST-l8-cED" firstAttribute="top" secondItem="8xB-DU-aE4" secondAttribute="bottom" constant="20" id="PWt-gk-K6m"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EST-l8-cED" secondAttribute="trailing" constant="20" id="YrV-8S-Cjc"/>
+                <constraint firstItem="ylu-ux-Nxt" firstAttribute="top" secondItem="EST-l8-cED" secondAttribute="bottom" constant="3" id="krj-sf-i7j"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no-wifi.png" width="256" height="256"/>
+    </resources>
+</document>
