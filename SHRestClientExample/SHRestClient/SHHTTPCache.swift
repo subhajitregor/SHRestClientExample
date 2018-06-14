@@ -17,12 +17,13 @@ class SHHTTPCache: NSObject {
     
     func getQueueFor(url: URL) -> DispatchQueue {
         
-        var theDispatchQueue = DispatchQueue(label: "temp_unused_fucking_queue")
+        var theDispatchQueue = DispatchQueue(label: "temp_unused_queue")
+        
         
         if self.dispatchQueueArray.isEmpty || self.dispatchQueueArray.contains(where: {$0[url] == nil}) {
             
             let randomString = UUID().uuidString
-//            theDispatchQueue = DispatchQueue(label: randomString, qos: .userInitiated, attributes: .concurrent)
+
             theDispatchQueue = DispatchQueue(label: randomString, qos: .userInitiated)
             
             self.dispatchQueueArray.append([url: theDispatchQueue])

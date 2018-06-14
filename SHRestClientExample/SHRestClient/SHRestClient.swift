@@ -10,18 +10,18 @@ import UIKit
 //import Reachability
 //import SVProgressHUD
 
-typealias SHHTTPResponseBlock = (Any?, HTTPURLResponse?, Error?) -> Void
-typealias SHReachabilityErrorBlock = () -> Void
-typealias SHErrorBlock = (SHRestClientErrorType,Error?) -> Void
-typealias SHSuccessBlock = (Any?, HTTPURLResponse?) -> Void
 
-class SHRestClient: NSObject {
+typealias ResponseErrorBlock = (Error?) -> Void
+typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
+
+
+final class SHRestClient: NSObject {
     
-    var urlString : String
+    internal var request: URLRequest!
     
     internal var httpSessionConfiguration: URLSessionConfiguration = .default
     
-//    var reachabilty: Reachability
+    internal let boundary = "----SHRestClientFormBoundary32E6xxV194klWY1384Xcjie"
     
     var sessionConfiguration: URLSessionConfiguration {
         set {
@@ -32,45 +32,25 @@ class SHRestClient: NSObject {
         }
     }
     
-    init(url: String!) {
-        self.urlString = url
-//        self.reachabilty = Reachability()
+    init(_ url: String) {
+        
+        guard let urlForRequest = URL(string: url) else {
+            print("Not valid URL String")
+            return
+        }
+        self.request = URLRequest(url: urlForRequest, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
     }
     
-    override init() {
-        self.urlString = ""
-
+    internal func contentType(_ type: String) {
+        self.request.setValue(type, forHTTPHeaderField: "Content-Type")
     }
     
-    
-    func get(parameters: [String: String]?, headers: [String: String]?, success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
-        
-        proceedFetchingWith(method: "GET", parameters: parameters, headers: headers, success: success, faliure: faliure)
-        
+    @objc @discardableResult func addHeaders(_ headers: [String: String]) -> SHRestClient {
+        for (key, value) in headers {
+            self.request.setValue(value, forHTTPHeaderField: key)
+        }
+        return self
     }
-    
-    func post(parameters: [String:String], headers: [String:String]?, success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
-        
-        proceedFetchingWith(method: "POST", parameters: parameters, headers: headers, success: success, faliure: faliure)
-        
-    }
-    
-    func post(parameters: [String:Any], headers: [String:String]?, success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
-        
-        proceedFetchingWith(method: "POST", parameters: parameters, headers: headers, success: success, faliure: faliure)
-        
-    }
-    
-    func delete(parameters: [String: String]?, headers: [String: String]?, success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
-        
-        proceedFetchingWith(method: "DELETE", parameters: parameters, headers: headers, success: success, faliure: faliure)
-        
-    }
-    
-    func put(parameters: [String: String]?, headers: [String: String]?, success: @escaping SHSuccessBlock, faliure: @escaping SHErrorBlock) {
-        proceedFetchingWith(method: "PUT", parameters: parameters, headers: headers, success: success, faliure: faliure)
-    }
-       
     
 }
 

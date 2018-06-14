@@ -14,12 +14,14 @@
 		9F0FA44A1F287FA60012AAF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4491F287FA60012AAF0 /* Assets.xcassets */; };
 		9F0FA4581F287FA60012AAF0 /* SHRestClientExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4571F287FA60012AAF0 /* SHRestClientExampleTests.swift */; };
 		9F0FA4631F287FA60012AAF0 /* SHRestClientExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4621F287FA60012AAF0 /* SHRestClientExampleUITests.swift */; };
+		9F2DFAF020D124A8002D33AC /* SHRequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */; };
+		9F2DFAF220D1394F002D33AC /* SHResponseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */; };
 		9F44EC6520C86948006700FF /* SHHTTPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC5F20C86947006700FF /* SHHTTPCache.swift */; };
 		9F44EC6720C86948006700FF /* SHRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6120C86948006700FF /* SHRestClient.swift */; };
 		9F44EC6820C86948006700FF /* SHRestClientCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6220C86948006700FF /* SHRestClientCore.swift */; };
 		9F44EC6920C86948006700FF /* SHRestClientUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6320C86948006700FF /* SHRestClientUtilities.swift */; };
 		9F5A3D401F8F7E5C00F02FA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A3D3F1F8F7E5C00F02FA6 /* README.md */; };
-		9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkManager.swift */; };
+		9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */; };
 		9F8ECDC920D0466600A4AAF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4461F287FA60012AAF0 /* Main.storyboard */; };
 		9F8ECDCA20D0466600A4AAF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA44B1F287FA60012AAF0 /* LaunchScreen.storyboard */; };
 		9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */; };
@@ -63,12 +65,14 @@
 		9F0FA45E1F287FA60012AAF0 /* SHRestClientExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHRestClientExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0FA4621F287FA60012AAF0 /* SHRestClientExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRestClientExampleUITests.swift; sourceTree = "<group>"; };
 		9F0FA4641F287FA60012AAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRequestMethods.swift; sourceTree = "<group>"; };
+		9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHResponseLoader.swift; sourceTree = "<group>"; };
 		9F44EC5F20C86947006700FF /* SHHTTPCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHHTTPCache.swift; sourceTree = "<group>"; };
 		9F44EC6120C86948006700FF /* SHRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClient.swift; sourceTree = "<group>"; };
 		9F44EC6220C86948006700FF /* SHRestClientCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClientCore.swift; sourceTree = "<group>"; };
 		9F44EC6320C86948006700FF /* SHRestClientUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClientUtilities.swift; sourceTree = "<group>"; };
 		9F5A3D3F1F8F7E5C00F02FA6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNetworkManager.swift; sourceTree = "<group>"; };
+		9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNetworkObserver.swift; sourceTree = "<group>"; };
 		9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionVC.swift; sourceTree = "<group>"; };
 		9F8ECDD120D0514700A4AAF9 /* no-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi.png"; sourceTree = "<group>"; };
 		9F8ECDD320D0594400A4AAF9 /* NoConnectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoConnectionVC.xib; sourceTree = "<group>"; };
@@ -169,9 +173,11 @@
 				9F8ECDCB20D04EA800A4AAF9 /* NoConnectionVC */,
 				9F44EC5F20C86947006700FF /* SHHTTPCache.swift */,
 				9F44EC6120C86948006700FF /* SHRestClient.swift */,
+				9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */,
 				9F44EC6220C86948006700FF /* SHRestClientCore.swift */,
 				9F44EC6320C86948006700FF /* SHRestClientUtilities.swift */,
-				9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkManager.swift */,
+				9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */,
+				9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */,
 			);
 			path = SHRestClient;
 			sourceTree = "<group>";
@@ -435,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkManager.swift in Sources */,
+				9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */,
 				9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */,
 				9F44EC6920C86948006700FF /* SHRestClientUtilities.swift in Sources */,
 				9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */,
@@ -443,6 +449,8 @@
 				9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */,
 				9F44EC6720C86948006700FF /* SHRestClient.swift in Sources */,
 				9F44EC6520C86948006700FF /* SHHTTPCache.swift in Sources */,
+				9F2DFAF220D1394F002D33AC /* SHResponseLoader.swift in Sources */,
+				9F2DFAF020D124A8002D33AC /* SHRequestMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

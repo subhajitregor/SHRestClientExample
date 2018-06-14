@@ -8,29 +8,65 @@
 
 import Foundation
 import UIKit
-//import FCAlertView
-//import SVProgressHUD
 
-
-enum SHHTTPContentType: String {
-    case wwwFormURLEncoded = "application/x-www-form-urlencoded"
-    case formData = "multipart/form-data"
-    case json = "application/json"
+enum ContentType {
+    static let urlEncoded = "application/x-www-form-urlencoded"
+    static let formData = "multipart/form-data"
+    static let json = "application/json"
 }
 
-enum SHRestClientErrorType {
-    case none
+enum MethodType {
+    static let get = "GET"
+    static let post = "POST"
+    static let put = "PUT"
+    static let delete = "DELETE"
+}
+
+enum ResponseErrorType: Error {
     case reachability
-    case error
     case jsonError
-    case text
+    case decoding
+    case emptyResponseData
 }
 
-enum SHNoInternetAlertType {
-    case viewController
-    case alert
-    case customAlert
-    case customViewController
+extension ResponseErrorType: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .reachability:
+            return NSLocalizedString("Cannot connect to Internet.", comment: "reachabilty error")
+        case .jsonError:
+            return NSLocalizedString("Cannot convert to JSON.", comment: "json error")
+        case .decoding:
+            return NSLocalizedString("Cannot decode data to T.", comment: "text error")
+        case .emptyResponseData:
+            return NSLocalizedString("Cannot find data", comment: "")
+        }
+    }
+    
+    public var failureReason: String? {
+        switch self {
+        case .reachability:
+            return NSLocalizedString("No Internet Found", comment: "")
+        case .jsonError:
+            return NSLocalizedString("JSON type mismatch", comment: "")
+        case .decoding:
+            return NSLocalizedString("JSON type mismatch", comment: "")
+        case .emptyResponseData:
+            return NSLocalizedString("Response from API is empty", comment: "")
+        }
+    }
+    public var recoverySuggestion: String? {
+        switch self {
+        case .reachability:
+            return NSLocalizedString("Check Internet connection", comment: "")
+        case .jsonError:
+            return NSLocalizedString("Check the response from API", comment: "")
+        case .decoding:
+            return NSLocalizedString("Check the response from API", comment: "")
+        case .emptyResponseData:
+            return NSLocalizedString("Check the response from API", comment: "")
+        }
+    }
 }
 
 extension Data {
@@ -42,31 +78,17 @@ extension Data {
     }
 }
 
-class SHRestClientSettings: NSObject {
-    
-    static let shared = SHRestClientSettings()
-    
-    var showProgressHuD = true
-    
-    override init() {
-        super.init()
-        
-    }
-    
-}
-
 class ProgressHUD: UIView {
         
     static let shared = ProgressHUD()
     
     let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-    
+    var indicatorColor = UIColor.black
+    var noOfActivations = 0
+    var isDisabledByUser = false
     init() {
         super.init(frame: CGRect.zero)
         self.indicatorView.hidesWhenStopped = true
-//        self.indicatorView.color = UIColor.themeGreen
-//        self.indicatorView.tintColor = UIColor.themeGreen
-        
         
     }
     
@@ -74,44 +96,39 @@ class ProgressHUD: UIView {
         super.init(coder: aDecoder)
     }
     
-    func show() {
-        self.indicatorView.color = UIColor.black
-        let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
-        
-        self.indicatorView.center = (appDelegate?.window?.center)!
-        
-        appDelegate?.window?.addSubview(self.indicatorView)
-        
-        self.indicatorView.startAnimating()
-        
+    class func setIndicatorColor(_ color: UIColor) {
+        ProgressHUD.shared.indicatorColor = color
     }
     
-    func show(with color: UIColor) {
-        self.indicatorView.color = color
-        let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
-        
-        self.indicatorView.center = (appDelegate?.window?.center)!
-        
-        appDelegate?.window?.addSubview(self.indicatorView)
-        
-        self.indicatorView.startAnimating()
-        
+    class func disable() {
+        shared.isDisabledByUser = true
     }
     
-    func hide() {
+    class func enable() {
+        shared.isDisabledByUser = false
+    }
+    
+    class func show() {
+        shared.indicatorView.color = shared.indicatorColor
+        let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
         
-        self.indicatorView.stopAnimating()
-        self.indicatorView.removeFromSuperview()
+        shared.indicatorView.center = (appDelegate?.window?.center)!
         
+        appDelegate?.window?.addSubview(shared.indicatorView)
+        
+        shared.indicatorView.startAnimating()
+        shared.noOfActivations = shared.noOfActivations + 1
+    }
+    
+    class func hide() {
+        shared.noOfActivations = shared.noOfActivations - 1
+        if shared.noOfActivations == 0 {
+            shared.indicatorView.stopAnimating()
+            shared.indicatorView.removeFromSuperview()
+        }
     }
 }
 
-class NoInternet: NSObject {
-    static let shared = NoInternet()
-    
-    var alertType : SHNoInternetAlertType = .customAlert
-    
-}
 
 
 extension AppDelegate {
@@ -143,55 +160,6 @@ extension AppDelegate {
 
 }
 
-extension UIViewController {
-    
-//    func showReachabilityAlert() {
-//        let alert = FCAlertView()
-//        
-//        alert.makeAlertTypeCaution()
-//        
-//        alert.showAlert(inView: self,
-//                        withTitle: "No Internet",
-//                        withSubtitle: "Please check you Internet connection.",
-//                        withCustomImage: nil,
-//                        withDoneButtonTitle: "OK",
-//                        andButtons: nil)
-//        
-//        
-//    }
-}
 
 
-//class ProgressHUDSV: SVProgressHUD {
-//    
-//    static let instance = ProgressHUDSV()
-//    
-//    var noOfActivations = 0
-//    init() {
-//        super.init(frame: CGRect.zero)
-//        
-//        
-//    }
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//    override class func show() {
-//        super.show()
-//        instance.noOfActivations = instance.noOfActivations + 1
-//    }
-//    
-//    override class func dismiss() {
-//       
-//        instance.noOfActivations = instance.noOfActivations - 1
-//        
-//        if instance.noOfActivations == 0 {
-//             super.dismiss()
-//        }
-//    }
-//}
 
