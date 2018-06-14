@@ -31,24 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func action(_ sender: UIButton) {
-        let newLogin = Login(email: "manivannan.bse@gmail.com", password: "adminpassword")
         
-        let rest = SHRestClient("http://foodplus.bsedemo.com/api/auth/login/")
-        
-        rest.addHeaders(["":""])
-            .post(encodable: newLogin)
-            .proceedFetching(success: { (data, response) in
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [.mutableContainers, .mutableLeaves])
-                print(json)
-            } catch {
-                print(error)
-            }
-            
-        }) { (error) in
-            print(error.debugDescription)
-        }
     }
 
 
