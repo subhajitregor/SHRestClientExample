@@ -30,7 +30,7 @@ class SHRestClientExampleTests: XCTestCase {
             let randomNum: UInt32 = arc4random_uniform(100)
             for _ in 1...10000 {
                 let client = SHRestClient("http://www.google.com")
-                client.addHeader(key: "some", value: "\(randomNum)")
+//                client.addHeader(key: "some", value: "\(randomNum)")
             }
         }
     }
