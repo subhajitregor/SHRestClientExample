@@ -52,5 +52,12 @@ final class SHRestClient: NSObject {
         return self
     }
     
+    @objc @discardableResult func addHeader(key: String, value: String) -> SHRestClient {
+        
+        self.request.setValue(value, forHTTPHeaderField: key)
+        
+        return self
+    }
+    
 }
 

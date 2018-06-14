@@ -22,14 +22,27 @@ class SHRestClientExampleTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+    }
+    
+    func testPreformanceOfClientObject () {
+        self.measure {
+            let randomNum: UInt32 = arc4random_uniform(100)
+            for _ in 1...10000 {
+                let client = SHRestClient("http://www.google.com")
+                client.addHeader(key: "some", value: "\(randomNum)")
+            }
+        }
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            let randomNum: UInt32 = arc4random_uniform(100)
+            for _ in 1...10000 {
+                var resource = URLRequest(url: URL(string: "https://www.google.com")!)
+                resource.setValue("some", forHTTPHeaderField: "\(randomNum)")
+            }
         }
     }
     
