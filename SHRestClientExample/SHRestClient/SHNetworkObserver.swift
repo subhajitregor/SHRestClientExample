@@ -56,7 +56,7 @@ final class SHNetworkObserver: NSObject {
         SHNetworkObserver.noConnectionVC = viewController
     }
     
-    class func networkStatusChanged(_ notification: Notification) {
+    @objc class func networkStatusChanged(_ notification: Notification) {
         guard let reachability = notification.object as? Reachability else {
             print("Notification object is not of type Reachability")
             return

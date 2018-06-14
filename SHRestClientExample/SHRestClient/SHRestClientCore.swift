@@ -81,33 +81,72 @@ extension SHRestClient {
         return nil
     }
     
-    //private let boundary = "----SHRestClientFormBoundary32E6xxV194klWY1384Xcjie"
-//    private func httpFormDataForParams(parameters: [String: Any], imageParams:[String: Data]?) -> Data {
-//
-//        var httpFormBody = Data()
-//
-//        for (key, value) in parameters {
-//            httpFormBody.append("--\(boundary)\r\n")
-//            httpFormBody.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-//            httpFormBody.append("\(value)\r\n")
-//        }
-//
-//        if (imageParams != nil) {
-//
-//            for (key, value) in imageParams! {
-//                let fileName = "image_\(key).png"
-//                httpFormBody.append("\r\n--\(boundary)\r\n")
-//                httpFormBody.append("Content-Disposition:form-data; name=\"\(key)\"; filename=\"\(fileName)\"\r\n")
-//                httpFormBody.append("Content-Type: application/octet-stream\r\n\r\n")
-//                httpFormBody.append(value)
-//                httpFormBody.append("\r\n--\(boundary)--\r\n")
-//            }
-//
-//        }
-//
-//        return httpFormBody
-//
-//    }
+    
+    internal func httpBodyForMultipartParams(parameters: [String: Any]?, dataParams:[String: Data]?) -> Data {
+
+        var httpFormBody = Data()
+
+        if parameters != nil {
+            for (key, value) in parameters! {
+                httpFormBody.append("--\(boundary)\r\n")
+                httpFormBody.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                httpFormBody.append("\(value)\r\n")
+            }
+        }
+        
+
+        if dataParams != nil {
+
+            for (key, value) in dataParams! {
+                let mimeType = getMimeType(value)
+                let fileName = "file_\(key).\(mimeType.filetype)"
+                httpFormBody.append("\r\n--\(boundary)\r\n")
+                httpFormBody.append("Content-Disposition:form-data; name=\"\(key)\"; filename=\"\(fileName)\"\r\n")
+                httpFormBody.append("Content-Type: \(getMimeType(value).mime)\r\n\r\n")
+                httpFormBody.append(value)
+                httpFormBody.append("\r\n--\(boundary)--\r\n")
+            }
+
+        }
+
+        return httpFormBody
+
+    }
+    
+    private func getMimeType(_ val : Data) -> (mime:String, filetype:String) {
+        var value = [UInt8](repeating:0, count:1)
+        val.copyBytes(to: &value, count: 1)
+        var mimeType = "application/octet-stream"
+        var fileType = ""
+        switch (value[0]) {
+        case 0xFF:
+            mimeType = "image/jpeg"
+            fileType = "jpeg"
+        case 0x89:
+            mimeType = "image/png"
+            fileType = "png"
+        case 0x47:
+            mimeType = "image/gif"
+            fileType = "gif"
+        case 0x49, 0x4D:
+            mimeType = "image/tiff"
+            fileType = "tiff"
+        case 0x25:
+            mimeType = "application/pdf"
+            fileType = "pdf"
+        case 0xD0:
+            mimeType = "application/vnd"
+            fileType = "vnd"
+        case 0x46:
+            mimeType = "text/plain"
+            fileType = "txt"
+        default:
+            mimeType = "application/octet-stream"
+            fileType = ""
+        }
+        
+        return (mimeType, fileType)
+    }
     
     private func proceedUploadingWith(parameters: [String: String], images: [String: String]) {
 //        

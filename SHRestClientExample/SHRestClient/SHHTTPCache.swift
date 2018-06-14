@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SHHTTPCache: NSObject {
+final class SHHTTPCache: NSObject {
     
     static let shared = SHHTTPCache()
     

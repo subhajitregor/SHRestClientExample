@@ -17,6 +17,20 @@ extension SHRestClient {
         return SHResponseLoader(rest: self)
     }
     
+    @objc func postMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
+        self.contentType(ContentType.formData)
+        self.request.httpMethod = MethodType.post
+        self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
+        return SHResponseLoader(rest: self)
+    }
+    
+    @objc func putMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
+        self.contentType(ContentType.formData)
+        self.request.httpMethod = MethodType.put
+        self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
+        return SHResponseLoader(rest: self)
+    }
+    
     @objc func post(fields: [String:String]?) -> SHResponseLoader {
         self.contentType(ContentType.urlEncoded)
         self.request.httpMethod = MethodType.post
