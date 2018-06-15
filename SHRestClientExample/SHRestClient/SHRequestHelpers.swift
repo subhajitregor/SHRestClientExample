@@ -3,14 +3,29 @@
 //  Partner
 //
 //  Created by Subhajit Halder on 05/05/18.
-
 //
 
 import Foundation
 
 extension SHRestClient {
     
+    internal func contentType(_ type: String) {
+        self.request.setValue(type, forHTTPHeaderField: "Content-Type")
+    }
     
+    @objc @discardableResult func addHeaders(_ headers: [String: String]) -> SHRestClient {
+        for (key, value) in headers {
+            self.request.setValue(value, forHTTPHeaderField: key)
+        }
+        return self
+    }
+    
+    @objc @discardableResult func addHeader(key: String, value: String) -> SHRestClient {
+        
+        self.request.setValue(value, forHTTPHeaderField: key)
+        
+        return self
+    }
     
     internal func baseURLWithParams(url: String, parameters: [String:String]?) -> URL {
         
@@ -147,20 +162,5 @@ extension SHRestClient {
         
         return (mimeType, fileType)
     }
-    
-    private func proceedUploadingWith(parameters: [String: String], images: [String: String]) {
-//        
-//        let url = URL(string: urlString)
-//        let session = URLSession(configuration: httpSessionConfiguration)
-//        var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
-//        
-//        request.httpMethod = "POST"
-//        
-//        let _ = session.uploadTask(with: request, from: nil) { (data, response, error) in
-//            //
-//        }
-        
-    }
-    
     
 }

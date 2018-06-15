@@ -41,23 +41,5 @@ final class SHRestClient: NSObject {
         self.request = URLRequest(url: urlForRequest, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
     }
     
-    internal func contentType(_ type: String) {
-        self.request.setValue(type, forHTTPHeaderField: "Content-Type")
-    }
-    
-    @objc @discardableResult func addHeaders(_ headers: [String: String]) -> SHRestClient {
-        for (key, value) in headers {
-            self.request.setValue(value, forHTTPHeaderField: key)
-        }
-        return self
-    }
-    
-    @objc @discardableResult func addHeader(key: String, value: String) -> SHRestClient {
-        
-        self.request.setValue(value, forHTTPHeaderField: key)
-        
-        return self
-    }
-    
 }
 
