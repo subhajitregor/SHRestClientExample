@@ -32,6 +32,18 @@ extension SHResponseLoader {
         let url = self.request.url
         let queue = SHHTTPCache.shared.getQueueFor(url: url!)
         
+        #if DEBUG
+            debugPrint(url!)
+            if self.request.httpMethod == MethodType.post || self.request.httpMethod == MethodType.put {
+                do {
+                    debugPrint(try JSONSerialization.jsonObject(with: self.request.httpBody!, options: [.mutableLeaves, .mutableContainers]))
+                } catch {
+                    debugPrint(error)
+                }
+                
+            }
+        #endif
+        
         queue.async {
             
             self.currentSessionDataTask = self.currentSession.dataTask(with: self.request, completionHandler: { (data, response, error) in

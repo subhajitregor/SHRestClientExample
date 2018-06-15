@@ -48,7 +48,7 @@ extension SHRestClient {
             
             components?.queryItems = queryItems
             
-            print("url - \(String(describing: components?.url))")
+//            print("url - \(String(describing: components?.url))")
             
             return (components?.url)!
             
@@ -70,7 +70,7 @@ extension SHRestClient {
             
             let string = parameterArray.joined(separator: "&")
             
-            print("Post params: \n \(string)")
+//            print("Post params: \n \(string)")
             
             return string.data(using: .utf8)!
         }
