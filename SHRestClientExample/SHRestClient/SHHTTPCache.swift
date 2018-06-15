@@ -3,7 +3,7 @@
 //  SHRestClientExample
 //
 //  Created by subhajit halder on 24/09/17.
-//  Copyright © 2017 SubhajitHalder. All rights reserved.
+
 //
 
 import UIKit

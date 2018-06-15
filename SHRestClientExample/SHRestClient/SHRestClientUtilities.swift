@@ -2,8 +2,8 @@
 //  SHRestClientUtilities.swift
 //  SHRestClientExample
 //
-//  Created by subhajit halder on 24/07/17.
-//  Copyright © 2017 SubhajitHalder. All rights reserved.
+//  Created by Subhajit Halder on 24/07/17.
+
 //
 
 import Foundation

@@ -3,7 +3,7 @@
 //  Partner
 //
 //  Created by Subhajit Halder on 05/05/18.
-//  Copyright © 2018 Ozoprop Technologies Pvt Ltd. All rights reserved.
+
 //
 
 import Foundation
