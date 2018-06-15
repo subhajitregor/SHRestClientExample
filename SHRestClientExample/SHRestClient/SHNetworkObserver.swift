@@ -9,6 +9,10 @@
 import UIKit
 import Reachability
 
+@objc public protocol SHNetworkObserverDelegate : class {
+    func networkStatus( isReachable: Bool)
+}
+
 final class SHNetworkObserver: NSObject {
     
     private static let reachability = Reachability()!
@@ -17,29 +21,25 @@ final class SHNetworkObserver: NSObject {
     
     private static var connection: Reachability.Connection = .none
     
+    private static weak var delegate: SHNetworkObserverDelegate?
+    
     static var isNetworkAvailable : Bool {
         return connection != .none
     }
     
-    //TODO: Implement Delegates
+    class func addDelegate(delegate: SHNetworkObserverDelegate) {
+        SHNetworkObserver.delegate = delegate
+    }
     
-//    static var whenReachable: Reachability.NetworkReachable? {
-//        set {
-//            SHNetworkObserver.reachability.whenReachable = newValue
-//        }
-//        get {
-//            return SHNetworkObserver.reachability.whenReachable
-//        }
-//    }
-//
-//    static var whenUnReachable: Reachability.NetworkUnreachable? {
-//        set {
-//            SHNetworkObserver.reachability.whenUnreachable = newValue
-//        }
-//        get {
-//            return SHNetworkObserver.reachability.whenUnreachable
-//        }
-//    }
+    class func removeDelegate(delegate: SHNetworkObserverDelegate) {
+        SHNetworkObserver.delegate  = nil
+    }
+    
+    class func recheckConnection() {
+        if SHNetworkObserver.delegate != nil {
+            SHNetworkObserver.delegate?.networkStatus(isReachable: SHNetworkObserver.isNetworkAvailable)
+        }
+    }
     
     class func startMonitoring() {
         
@@ -61,20 +61,26 @@ final class SHNetworkObserver: NSObject {
             print("Notification object is not of type Reachability")
             return
         }
-        SHNetworkObserver.connection = reachability.connection
-        switch reachability.connection {
-        case .none:
         
+        SHNetworkObserver.connection = reachability.connection
+        
+        switch reachability.connection {
+        
+        case .none:
             print("Network Unreachable")
             let appDel = UIApplication.shared.delegate
             appDel?.window??.rootViewController?.present(SHNetworkObserver.noConnectionVC, animated: true, completion: nil)
-//            AppDelegate.topViewController?.present(SHNetworkObserver.noConnectionVC, animated: true, completion: nil)
+            
         case .cellular, .wifi:
             if AppDelegate.topViewController == SHNetworkObserver.noConnectionVC {
                 AppDelegate.topViewController?.dismiss(animated: true, completion: nil)
             }
             print("Network Reachable")
        
+        }
+        
+        if SHNetworkObserver.delegate != nil {
+            SHNetworkObserver.delegate?.networkStatus(isReachable: reachability.connection != .none)
         }
         
     }
