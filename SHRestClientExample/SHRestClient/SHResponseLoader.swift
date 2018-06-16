@@ -39,11 +39,9 @@ extension SHResponseLoader {
                     debugPrint(try JSONSerialization.jsonObject(with: self.request.httpBody!, options: [.mutableLeaves, .mutableContainers]))
                 } catch {
                     debugPrint(error)
-                }
-                
+                }                
             }
         #endif
-        
         queue.async {
             
             self.currentSessionDataTask = self.currentSession.dataTask(with: self.request, completionHandler: { (data, response, error) in
@@ -79,9 +77,15 @@ extension SHResponseLoader {
     @objc @discardableResult func fetchData(success: @escaping (_ response: Data) -> Void, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
         
         return self.proceedFetching(success: { (data, response) in
-            success(data!)
+            DispatchQueue.main.async {
+                success(data!)
+            }
+            
         }, failure: { (error) in
-            failure(error)
+            DispatchQueue.main.async {
+                failure(error)
+            }
+            
         })
     }
     
@@ -89,13 +93,21 @@ extension SHResponseLoader {
         
         return self.fetchData(success: { (data) in
             do {
-                success(try decoder.decode(decodeable, from: data))
+                let jsonObj = try decoder.decode(decodeable, from: data)
+                DispatchQueue.main.async {
+                    success(jsonObj)
+                }
             } catch {
-                failure(ResponseErrorType.decoding)
+                DispatchQueue.main.async {
+                    failure(ResponseErrorType.decoding)
+                }                
             }
             
         }, failure: { (error) in
-            failure(error)
+            DispatchQueue.main.async {
+                failure(error)
+            }
+            
         })
         
     }
@@ -103,12 +115,21 @@ extension SHResponseLoader {
     @objc @discardableResult func fetchJSON(readingOptions: JSONSerialization.ReadingOptions = [], success: @escaping (_ response: Any?) -> Void, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {        
         return self.fetchData(success: { (data) in
             do {
-                success(try JSONSerialization.jsonObject(with: data, options: readingOptions))
+                let jsonObj = try JSONSerialization.jsonObject(with: data, options: readingOptions)
+                DispatchQueue.main.async {
+                    success(jsonObj)
+                }
             } catch {
-                failure(ResponseErrorType.decoding)
+                DispatchQueue.main.async {
+                    failure(ResponseErrorType.decoding)
+                }
+                
             }
         }, failure: { (error) in
-            failure(error)
+            DispatchQueue.main.async {
+                failure(error)
+            }
+            
         })
     }
 }
