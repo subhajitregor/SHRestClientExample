@@ -8,12 +8,21 @@
 
 import UIKit
 
+
 struct Login: Codable {
     let email: String
     let password: String
 }
 
-class ViewController: UIViewController {
+struct ResponseLogin: Codable {
+    
+}
+
+
+
+final class ViewController: UIViewController {
+    
+    let url = "<#your url#>"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +33,46 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func getTestFunc() {
+        
+        let restClient = SHRestClient(url)
+        
+        restClient.addHeader(key: "Authorization", value: "some value")
+            .get(parameters: ["paramsKey":"value"])
+            .fetchData(success: { (data) in
+                // Raw data fetched
+            }) { (error) in
+                //
+        }
+        
+        let restClient2 = SHRestClient(url)
+        restClient.addHeaders(["header1": "value1",
+                               "header2": "value2"])
+            .get(parameters: nil)
+            .fetchJSON(success: { (jsonFormattedData) in
+                //
+            }) { (error) in
+                //
+        }
+        
     }
+    
+    func postTestFunc() {
+        
+        let loginData = Login(email: "g@g.com", password: "1234")
+        
+        let restClient = SHRestClient(url)
+        restClient.post(encodable: loginData)
+            .fetchJSON(decodeable: ResponseLogin.self, success: { (responseLogin) in
+                //
+            }) { (error) in
+                //
+        }
+    }
+    
+    
+
     
     @IBAction func action(_ sender: UIButton) {
         
