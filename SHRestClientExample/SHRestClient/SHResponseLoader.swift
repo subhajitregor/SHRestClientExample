@@ -10,13 +10,13 @@ import UIKit
 
 
 
-final class SHResponseLoader: NSObject {
+@objc final public class SHResponseLoader: NSObject {
 
     internal var request: URLRequest
     internal var httpSessionConfiguration: URLSessionConfiguration
     internal var currentSession: URLSession
     internal var currentSessionDataTask: URLSessionDataTask
-    init(rest: SHRestClient) {
+    public required init(rest: SHRestClient) {
         self.request = rest.request
         self.httpSessionConfiguration = rest.httpSessionConfiguration
         self.currentSession = URLSession(configuration: self.httpSessionConfiguration)

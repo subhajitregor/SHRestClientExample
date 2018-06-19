@@ -21,6 +21,7 @@
 		9F44EC6820C86948006700FF /* SHRequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6220C86948006700FF /* SHRequestHelpers.swift */; };
 		9F44EC6920C86948006700FF /* SHClientHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6320C86948006700FF /* SHClientHelpers.swift */; };
 		9F5A3D401F8F7E5C00F02FA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A3D3F1F8F7E5C00F02FA6 /* README.md */; };
+		9F6A450C20D83B0800C598F5 /* ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A450B20D83B0800C598F5 /* ExampleVC.m */; };
 		9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */; };
 		9F8ECDC920D0466600A4AAF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4461F287FA60012AAF0 /* Main.storyboard */; };
 		9F8ECDCA20D0466600A4AAF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA44B1F287FA60012AAF0 /* LaunchScreen.storyboard */; };
@@ -72,6 +73,9 @@
 		9F44EC6220C86948006700FF /* SHRequestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRequestHelpers.swift; sourceTree = "<group>"; };
 		9F44EC6320C86948006700FF /* SHClientHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHClientHelpers.swift; sourceTree = "<group>"; };
 		9F5A3D3F1F8F7E5C00F02FA6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F6A450920D83B0700C598F5 /* SHRestClientExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHRestClientExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F6A450A20D83B0800C598F5 /* ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleVC.h; sourceTree = "<group>"; };
+		9F6A450B20D83B0800C598F5 /* ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleVC.m; sourceTree = "<group>"; };
 		9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNetworkObserver.swift; sourceTree = "<group>"; };
 		9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionVC.swift; sourceTree = "<group>"; };
 		9F8ECDD120D0514700A4AAF9 /* no-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi.png"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9F0FA4701F287FBB0012AAF0 /* SHRestClient */,
+				9F6A450820D83ACA00C598F5 /* ObjCExample */,
 				9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */,
 				9F0FA4441F287FA60012AAF0 /* ViewController.swift */,
 				9F0FA4461F287FA60012AAF0 /* Main.storyboard */,
@@ -180,6 +185,16 @@
 				9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */,
 			);
 			path = SHRestClient;
+			sourceTree = "<group>";
+		};
+		9F6A450820D83ACA00C598F5 /* ObjCExample */ = {
+			isa = PBXGroup;
+			children = (
+				9F6A450A20D83B0800C598F5 /* ExampleVC.h */,
+				9F6A450B20D83B0800C598F5 /* ExampleVC.m */,
+				9F6A450920D83B0700C598F5 /* SHRestClientExample-Bridging-Header.h */,
+			);
+			path = ObjCExample;
 			sourceTree = "<group>";
 		};
 		9F8ECDCB20D04EA800A4AAF9 /* NoConnectionVC */ = {
@@ -447,6 +462,7 @@
 				9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */,
 				9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */,
 				9F44EC6920C86948006700FF /* SHClientHelpers.swift in Sources */,
+				9F6A450C20D83B0800C598F5 /* ExampleVC.m in Sources */,
 				9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */,
 				9F44EC6820C86948006700FF /* SHRequestHelpers.swift in Sources */,
 				9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */,
@@ -620,11 +636,14 @@
 			baseConfigurationReference = 4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
 				INFOPLIST_FILE = SHRestClientExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.regor.SHRestClientExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SHRestClientExample/ObjCExample/SHRestClientExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -635,11 +654,13 @@
 			baseConfigurationReference = 422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
 				INFOPLIST_FILE = SHRestClientExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.regor.SHRestClientExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SHRestClientExample/ObjCExample/SHRestClientExample-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

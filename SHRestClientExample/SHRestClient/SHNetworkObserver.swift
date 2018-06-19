@@ -13,7 +13,7 @@ import Reachability
     func networkStatus( isReachable: Bool)
 }
 
-final class SHNetworkObserver: NSObject {
+@objc final public class SHNetworkObserver: NSObject {
     
     private static let reachability = Reachability()!
     

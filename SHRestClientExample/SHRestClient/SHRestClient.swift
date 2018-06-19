@@ -15,7 +15,7 @@ typealias ResponseErrorBlock = (Error?) -> Void
 typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
 
 
-final class SHRestClient: NSObject {
+@objc final public class SHRestClient: NSObject {
     
     internal var request: URLRequest!
     
@@ -32,14 +32,21 @@ final class SHRestClient: NSObject {
         }
     }
     
-    init(_ url: String) {
-        
+    override public init() {
+        super.init()
+    }
+    
+    @objc public required convenience init(_ url: String!) {
+        self.init()
         guard let urlForRequest = URL(string: url) else {
             print("Not valid URL String")
             return
         }
         self.request = URLRequest(url: urlForRequest, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
+        
+        
     }
+    
     
 }
 
