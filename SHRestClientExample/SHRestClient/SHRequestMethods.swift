@@ -18,16 +18,30 @@ extension SHRestClient {
     }
     
     @objc func postMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
-        self.contentType(ContentType.formData)
+        self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
         return SHResponseLoader(rest: self)
     }
     
+    @objc func postMultipart(params: [String: Any]) -> SHResponseLoader {
+        self.contentType("\(ContentType.formData); boundary=\(boundary)")
+        self.request.httpMethod = MethodType.put
+        self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: nil)
+        return SHResponseLoader(rest: self)
+    }
+    
     @objc func putMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
-        self.contentType(ContentType.formData)
+        self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.put
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
+        return SHResponseLoader(rest: self)
+    }
+    
+    @objc func putMultipart(params: [String: Any]) -> SHResponseLoader {
+        self.contentType("\(ContentType.formData); boundary=\(boundary)")
+        self.request.httpMethod = MethodType.put
+        self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: nil)
         return SHResponseLoader(rest: self)
     }
     

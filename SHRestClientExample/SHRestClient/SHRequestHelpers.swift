@@ -124,6 +124,8 @@ extension SHRestClient {
 
         }
 
+        httpFormBody.append("\r\n--\(boundary)--\r\n")
+        
         return httpFormBody
 
     }

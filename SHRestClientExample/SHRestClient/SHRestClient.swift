@@ -21,7 +21,7 @@ typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
     
     internal var httpSessionConfiguration: URLSessionConfiguration = .default
     
-    internal let boundary = "----SHRestClientFormBoundary32E6xxV194klWY1384Xcjie"
+    internal let boundary = "---------------SHRestClientFormBoundary32E6xxV194klWY1384Xcjie"
     
     var sessionConfiguration: URLSessionConfiguration {
         set {
