@@ -121,10 +121,10 @@ extension SHRestClient {
 
             for (key, value) in dataParams! {
                 let mimeType = getMimeType(value)
-                let fileName = "file_\(key).\(mimeType.filetype)"
+                let fileName = "\(key).\(mimeType.filetype)"
                 httpFormBody.append("\r\n--\(boundary)\r\n")
                 httpFormBody.append("Content-Disposition:form-data; name=\"\(key)\"; filename=\"\(fileName)\"\r\n")
-                httpFormBody.append("Content-Type: \(getMimeType(value).mime)\r\n\r\n")
+                httpFormBody.append("Content-Type: \(mimeType.mime)\r\n\r\n")
                 httpFormBody.append(value)
                 httpFormBody.append("\r\n--\(boundary)--\r\n")
             }
@@ -145,7 +145,7 @@ extension SHRestClient {
         switch (value[0]) {
         case 0xFF:
             mimeType = "image/jpeg"
-            fileType = "jpeg"
+            fileType = "jpg"
         case 0x89:
             mimeType = "image/png"
             fileType = "png"
