@@ -27,6 +27,13 @@ extension SHRestClient {
         return self
     }
     
+    @discardableResult func addHeader(_ header: (key: String, value: String)) -> SHRestClient {
+        
+        self.request.setValue(header.value, forHTTPHeaderField: header.key)
+        
+        return self
+    }
+    
     internal func baseURLWithParams(url: String, parameters: [String:String]?) -> URL {
         
         if parameters == nil {
