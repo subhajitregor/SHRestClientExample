@@ -38,7 +38,6 @@ extension SHRestClient {
         
         if parameters == nil {
             
-            print("url - \(String(describing: URL(string: url)))")
             return URL(string: url)!
             
         } else {
@@ -77,8 +76,6 @@ extension SHRestClient {
             
             let string = parameterArray.joined(separator: "&")
             
-//            print("Post params: \n \(string)")
-            
             return string.data(using: .utf8)!
         }
         
@@ -90,12 +87,6 @@ extension SHRestClient {
             guard let body = try? JSONSerialization.data(withJSONObject: parameters ?? ["":""], options: []) else {
                 return Data()
             }
-            do {
-                print("Post Json: \n \(try JSONSerialization.jsonObject(with: body, options: [.mutableContainers, .mutableLeaves]))")
-            } catch {
-                print(error)
-            }
-            
             
             return body
         }

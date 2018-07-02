@@ -26,7 +26,7 @@ extension SHRestClient {
     
     @objc func postMultipart(params: [String: Any]) -> SHResponseLoader {
         self.contentType("\(ContentType.formData); boundary=\(boundary)")
-        self.request.httpMethod = MethodType.put
+        self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: nil)
         return SHResponseLoader(rest: self)
     }

@@ -11,7 +11,7 @@ import UIKit
 //import SVProgressHUD
 
 
-typealias ResponseErrorBlock = (Error?) -> Void
+typealias ResponseErrorBlock = (Error) -> Void
 typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
 
 
