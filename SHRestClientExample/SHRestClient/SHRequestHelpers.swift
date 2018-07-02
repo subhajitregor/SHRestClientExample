@@ -38,7 +38,6 @@ extension SHRestClient {
         
         if parameters == nil {
             
-            print("url - \(String(describing: URL(string: url)))")
             return URL(string: url)!
             
         } else {
@@ -77,8 +76,6 @@ extension SHRestClient {
             
             let string = parameterArray.joined(separator: "&")
             
-//            print("Post params: \n \(string)")
-            
             return string.data(using: .utf8)!
         }
         
@@ -90,12 +87,6 @@ extension SHRestClient {
             guard let body = try? JSONSerialization.data(withJSONObject: parameters ?? ["":""], options: []) else {
                 return Data()
             }
-            do {
-                print("Post Json: \n \(try JSONSerialization.jsonObject(with: body, options: [.mutableContainers, .mutableLeaves]))")
-            } catch {
-                print(error)
-            }
-            
             
             return body
         }
@@ -121,10 +112,10 @@ extension SHRestClient {
 
             for (key, value) in dataParams! {
                 let mimeType = getMimeType(value)
-                let fileName = "file_\(key).\(mimeType.filetype)"
+                let fileName = "\(key).\(mimeType.filetype)"
                 httpFormBody.append("\r\n--\(boundary)\r\n")
                 httpFormBody.append("Content-Disposition:form-data; name=\"\(key)\"; filename=\"\(fileName)\"\r\n")
-                httpFormBody.append("Content-Type: \(getMimeType(value).mime)\r\n\r\n")
+                httpFormBody.append("Content-Type: \(mimeType.mime)\r\n\r\n")
                 httpFormBody.append(value)
                 httpFormBody.append("\r\n--\(boundary)--\r\n")
             }
@@ -145,7 +136,7 @@ extension SHRestClient {
         switch (value[0]) {
         case 0xFF:
             mimeType = "image/jpeg"
-            fileType = "jpeg"
+            fileType = "jpg"
         case 0x89:
             mimeType = "image/png"
             fileType = "png"
