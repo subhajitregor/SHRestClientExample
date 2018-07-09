@@ -86,6 +86,8 @@ class ProgressHUD: UIView {
     var indicatorColor = UIColor.black
     var noOfActivations = 0
     var isDisabledByUser = false
+    var currentlyActive = false
+    
     init() {
         super.init(frame: CGRect.zero)
         self.indicatorView.hidesWhenStopped = true
@@ -118,6 +120,7 @@ class ProgressHUD: UIView {
         
         shared.indicatorView.startAnimating()
         shared.noOfActivations = shared.noOfActivations + 1
+        shared.currentlyActive = true
     }
     
     class func hide() {
@@ -125,6 +128,7 @@ class ProgressHUD: UIView {
         if shared.noOfActivations == 0 {
             shared.indicatorView.stopAnimating()
             shared.indicatorView.removeFromSuperview()
+            shared.currentlyActive = false
         }
     }
 }

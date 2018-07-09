@@ -28,6 +28,7 @@
 		9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */; };
 		9F8ECDD220D0514700A4AAF9 /* no-wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECDD120D0514700A4AAF9 /* no-wifi.png */; };
 		9F8ECDD420D0594400A4AAF9 /* NoConnectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECDD320D0594400A4AAF9 /* NoConnectionVC.xib */; };
+		9F9B27B820F3F241003E0883 /* SHSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B27B720F3F241003E0883 /* SHSessionDataTask.swift */; };
 		E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionVC.swift; sourceTree = "<group>"; };
 		9F8ECDD120D0514700A4AAF9 /* no-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi.png"; sourceTree = "<group>"; };
 		9F8ECDD320D0594400A4AAF9 /* NoConnectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoConnectionVC.xib; sourceTree = "<group>"; };
+		9F9B27B720F3F241003E0883 /* SHSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSessionDataTask.swift; sourceTree = "<group>"; };
 		AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				9F44EC6320C86948006700FF /* SHClientHelpers.swift */,
 				9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */,
 				9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */,
+				9F9B27B720F3F241003E0883 /* SHSessionDataTask.swift */,
 			);
 			path = SHRestClient;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */,
 				9F44EC6720C86948006700FF /* SHRestClient.swift in Sources */,
 				9F44EC6520C86948006700FF /* SHHTTPCache.swift in Sources */,
+				9F9B27B820F3F241003E0883 /* SHSessionDataTask.swift in Sources */,
 				9F2DFAF220D1394F002D33AC /* SHResponseLoader.swift in Sources */,
 				9F2DFAF020D124A8002D33AC /* SHRequestMethods.swift in Sources */,
 			);
