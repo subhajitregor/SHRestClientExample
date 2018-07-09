@@ -26,7 +26,7 @@ final class SHResponseLoader: NSObject {
 
 extension SHResponseLoader {
     
-    @objc @discardableResult func fetchRaw(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
+    @objc @discardableResult func fetchRaw(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         if !ProgressHUD.shared.isDisabledByUser {
             ProgressHUD.show()
         }
@@ -39,7 +39,7 @@ extension SHResponseLoader {
             do {
                 debugPrint(try JSONSerialization.jsonObject(with: self.request.httpBody!, options: [.mutableLeaves, .mutableContainers, .allowFragments]))
             } catch {
-                debugPrint(error)
+                debugPrint(String(data: self.request.httpBody!, encoding: String.Encoding.utf8) ?? "")
             }
         }
         #endif
@@ -68,10 +68,10 @@ extension SHResponseLoader {
             self.currentSessionDataTask.resume()
         }
         
-        return self.currentSessionDataTask
+        return SHSessionDataTask(task: self.currentSessionDataTask)
     }
     
-    @objc @discardableResult func proceedFetching(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
+    @objc @discardableResult func proceedFetching(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         return self.fetchRaw(success: { (data, response) in
             if data != nil {
                 success(data, response)
@@ -83,7 +83,7 @@ extension SHResponseLoader {
         }
     }
     
-    @objc @discardableResult func fetchData(success: @escaping (_ response: Data) -> Void, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
+    @objc @discardableResult func fetchData(success: @escaping (_ response: Data) -> Void, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         
         return self.proceedFetching(success: { (data, response) in
             DispatchQueue.main.async {
@@ -98,7 +98,7 @@ extension SHResponseLoader {
         })
     }
     
-    @discardableResult func fetchJSON<T: Decodable>(decodeable: T.Type, decoder: JSONDecoder = JSONDecoder(), success: @escaping (_ response: T) -> Void, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
+    @discardableResult func fetchJSON<T: Decodable>(decodeable: T.Type, decoder: JSONDecoder = JSONDecoder(), success: @escaping (_ response: T) -> Void, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         
         return self.fetchData(success: { (data) in
             do {
@@ -132,7 +132,7 @@ extension SHResponseLoader {
         
     }
     
-    @discardableResult func fetchJSON<T: Decodable, U: Decodable>(decodeable: T.Type, decoder: JSONDecoder = JSONDecoder(),errorDecodable: U.Type, success: @escaping (_ response: T) -> Void, failure: @escaping (_ error: U?, Error) -> Void) -> URLSessionDataTask {
+    @discardableResult func fetchJSON<T: Decodable, U: Decodable>(decodeable: T.Type, decoder: JSONDecoder = JSONDecoder(),errorDecodable: U.Type, success: @escaping (_ response: T) -> Void, failure: @escaping (_ error: U?, Error) -> Void) -> SHSessionDataTask {
         
         return self.fetchData(success: { (data) in
             do {
@@ -162,7 +162,7 @@ extension SHResponseLoader {
         
     }
     
-    @objc @discardableResult func fetchJSON(readingOptions: JSONSerialization.ReadingOptions = [], success: @escaping (_ response: Any?) -> Void, failure: @escaping ResponseErrorBlock) -> URLSessionDataTask {
+    @objc @discardableResult func fetchJSON(readingOptions: JSONSerialization.ReadingOptions = [], success: @escaping (_ response: Any?) -> Void, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         
         return self.fetchData(success: { (data) in
             do {

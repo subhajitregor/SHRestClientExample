@@ -39,11 +39,12 @@ typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
     @objc public required convenience init(_ url: String!) {
         self.init()
         guard let urlForRequest = URL(string: url) else {
+            #if DEBUG
             print("Not valid URL String")
+            #endif
             return
         }
-        self.request = URLRequest(url: urlForRequest, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15.0)
-        
+        self.request = URLRequest(url: urlForRequest, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30.0)
         
     }
     
