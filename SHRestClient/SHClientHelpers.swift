@@ -136,11 +136,11 @@ class ProgressHUD {
     
     class func show() {
         shared.indicatorView.color = shared.indicatorColor
-        let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
-        
-        shared.indicatorView.center = shared.position.point
-        if shared.noOfActivations == 0 {
-            appDelegate?.window?.addSubview(shared.indicatorView)
+        if let window = UIApplication.shared.keyWindow {
+            shared.indicatorView.center = shared.position.point
+            if shared.noOfActivations == 0 {
+                window.addSubview(shared.indicatorView)
+            }
         }
                 
         shared.indicatorView.startAnimating()
@@ -158,36 +158,6 @@ class ProgressHUD {
     }
 }
 
-
-
-extension AppDelegate {
-    
-    static var topViewController: UIViewController? {
-        get {
-            return getTopViewController()
-        }
-    }
-    
-    static var root: UIViewController? {
-        get {
-            return UIApplication.shared.delegate?.window??.rootViewController
-        }
-    }
-    
-    static func getTopViewController(from viewController: UIViewController? = AppDelegate.root) -> UIViewController? {
-        
-        if let tabBarViewController = viewController as? UITabBarController {
-            return getTopViewController(from: tabBarViewController.selectedViewController)
-        } else if let navigationController = viewController as? UINavigationController {
-            return getTopViewController(from: navigationController.visibleViewController)
-        } else if let presentedViewController = viewController?.presentedViewController {
-            return getTopViewController(from: presentedViewController)
-        } else {
-            return viewController
-        }
-    }
-
-}
 
 
 
