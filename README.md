@@ -4,6 +4,7 @@
 
 [![Swift](https://img.shields.io/badge/swift-4-orange.svg?style=flat)](https://developer.apple.com/swift/)
 ![Objective-C Compatible](https://img.shields.io/badge/Objective--C-Compatible-blue.svg?style=flat)
+[![Version](https://img.shields.io/cocoapods/v/SHRestClient.svg?style=flat)](http://cocoapods.org/pods/SHRestClient)
 ![Repo Type](https://img.shields.io/badge/Repo--Type-BoilerPlate-lightgrey.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-brightgreen.svg?style=flat)
 
