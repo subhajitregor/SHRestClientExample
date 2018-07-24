@@ -22,11 +22,13 @@ struct ResponseLogin: Codable {
 
 final class ViewController: UIViewController {
     
-    let url = "<#your url#>"
+    let url = "https://www.google.com/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProgressHUD.setIndicatorColor(UIColor.brown)
+        ProgressHUD.enable()
+        ProgressHUD.setCenter(position: .multiplier(0.9))
+        ProgressHUD.setIndicatorColor(UIColor.brown)        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +49,7 @@ final class ViewController: UIViewController {
         }
         
         let restClient2 = SHRestClient(url)
-        restClient.addHeaders(["header1": "value1",
+        restClient2.addHeaders(["header1": "value1",
                                "header2": "value2"])
             .get(parameters: nil)
             .fetchJSON(success: { (jsonFormattedData) in
@@ -75,7 +77,7 @@ final class ViewController: UIViewController {
 
     
     @IBAction func action(_ sender: UIButton) {
-        
+        postTestFunc()
     }
 
 

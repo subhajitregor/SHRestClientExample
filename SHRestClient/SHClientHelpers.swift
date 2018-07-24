@@ -78,25 +78,45 @@ extension Data {
     }
 }
 
-class ProgressHUD: UIView {
+class ProgressHUD {
+    
+    enum Position {
+        case top
+        case middle
+        case bottom
+        case customY(CGFloat)
+        case multiplier(CGFloat)
+        
+        var point : CGPoint {
+            switch self {
+            case .top:
+                return CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.height * 0.2)
+            case .middle:
+                return CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
+            case .bottom:
+                return CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.height * 0.8)
+            case .customY(let y):
+                return CGPoint(x: UIScreen.main.bounds.midX, y: y)
+            case .multiplier(let x):
+                return CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.height * x)
+            }
+        }
+    }
         
     static let shared = ProgressHUD()
     
     let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     var indicatorColor = UIColor.black
     var noOfActivations = 0
-    var isDisabledByUser = false
+    var isDisabledByUser = true
     var currentlyActive = false
     
+    var position: Position = .middle
+    
     init() {
-        super.init(frame: CGRect.zero)
         self.indicatorView.hidesWhenStopped = true
-        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     class func setIndicatorColor(_ color: UIColor) {
         ProgressHUD.shared.indicatorColor = color
@@ -104,6 +124,10 @@ class ProgressHUD: UIView {
     
     class func disable() {
         shared.isDisabledByUser = true
+    }
+    
+    class func setCenter(position: Position) {
+        shared.position = position
     }
     
     class func enable() {
@@ -114,10 +138,11 @@ class ProgressHUD: UIView {
         shared.indicatorView.color = shared.indicatorColor
         let appDelegate: AppDelegate? = (UIApplication.shared.delegate as? AppDelegate)
         
-        shared.indicatorView.center = (appDelegate?.window?.center)!
-        
-        appDelegate?.window?.addSubview(shared.indicatorView)
-        
+        shared.indicatorView.center = shared.position.point
+        if shared.noOfActivations == 0 {
+            appDelegate?.window?.addSubview(shared.indicatorView)
+        }
+                
         shared.indicatorView.startAnimating()
         shared.noOfActivations = shared.noOfActivations + 1
         shared.currentlyActive = true
