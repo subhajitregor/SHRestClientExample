@@ -27,13 +27,13 @@
     NSString *url = @"";
 
     SHRestClient *restC = [[SHRestClient alloc] init:url];
-    [[restC getWithParameters:@{@"a":@"b"}] fetchDataWithSuccess:^(NSData * _Nonnull data) {
+    SHSessionDataTask * task = [[restC getWithParameters:@{@"a":@"b"}] fetchDataWithSuccess:^(NSData * _Nonnull data) {
         //
     } failure:^(NSError * _Nullable error) {
         //
     } ];
     
-    
+    [task resume];
     
 }
 
