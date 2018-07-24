@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Reachability
 
 @objc public protocol SHNetworkObserverDelegate : class {
     func networkStatus( isReachable: Bool)

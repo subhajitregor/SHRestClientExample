@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E8C8F2940A5D300DA97F107 /* Pods_SHRestClientExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		8FC1128C949C2A42D569E32B /* Pods_SHRestClientExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */; };
 		9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */; };
 		9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4441F287FA60012AAF0 /* ViewController.swift */; };
 		9F0FA44A1F287FA60012AAF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4491F287FA60012AAF0 /* Assets.xcassets */; };
@@ -16,12 +14,12 @@
 		9F0FA4631F287FA60012AAF0 /* SHRestClientExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0FA4621F287FA60012AAF0 /* SHRestClientExampleUITests.swift */; };
 		9F2DFAF020D124A8002D33AC /* SHRequestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */; };
 		9F2DFAF220D1394F002D33AC /* SHResponseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */; };
-		9F44EC6520C86948006700FF /* SHHTTPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC5F20C86947006700FF /* SHHTTPCache.swift */; };
 		9F44EC6720C86948006700FF /* SHRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6120C86948006700FF /* SHRestClient.swift */; };
 		9F44EC6820C86948006700FF /* SHRequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6220C86948006700FF /* SHRequestHelpers.swift */; };
 		9F44EC6920C86948006700FF /* SHClientHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EC6320C86948006700FF /* SHClientHelpers.swift */; };
 		9F5A3D401F8F7E5C00F02FA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A3D3F1F8F7E5C00F02FA6 /* README.md */; };
 		9F6A450C20D83B0800C598F5 /* ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A450B20D83B0800C598F5 /* ExampleVC.m */; };
+		9F8AF33E2106D8E800251B11 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AF33D2106D8E800251B11 /* Reachability.swift */; };
 		9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */; };
 		9F8ECDC920D0466600A4AAF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA4461F287FA60012AAF0 /* Main.storyboard */; };
 		9F8ECDCA20D0466600A4AAF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F0FA44B1F287FA60012AAF0 /* LaunchScreen.storyboard */; };
@@ -29,7 +27,6 @@
 		9F8ECDD220D0514700A4AAF9 /* no-wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECDD120D0514700A4AAF9 /* no-wifi.png */; };
 		9F8ECDD420D0594400A4AAF9 /* NoConnectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECDD320D0594400A4AAF9 /* NoConnectionVC.xib */; };
 		9F9B27B820F3F241003E0883 /* SHSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B27B720F3F241003E0883 /* SHSessionDataTask.swift */; };
-		E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample.debug.xcconfig"; sourceTree = "<group>"; };
-		422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample.release.xcconfig"; sourceTree = "<group>"; };
-		8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleTests/Pods-SHRestClientExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0FA43F1F287FA60012AAF0 /* SHRestClientExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHRestClientExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F0FA4441F287FA60012AAF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +62,6 @@
 		9F0FA4641F287FA60012AAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHRequestMethods.swift; sourceTree = "<group>"; };
 		9F2DFAF120D1394F002D33AC /* SHResponseLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHResponseLoader.swift; sourceTree = "<group>"; };
-		9F44EC5F20C86947006700FF /* SHHTTPCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHHTTPCache.swift; sourceTree = "<group>"; };
 		9F44EC6120C86948006700FF /* SHRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestClient.swift; sourceTree = "<group>"; };
 		9F44EC6220C86948006700FF /* SHRequestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRequestHelpers.swift; sourceTree = "<group>"; };
 		9F44EC6320C86948006700FF /* SHClientHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHClientHelpers.swift; sourceTree = "<group>"; };
@@ -77,16 +69,12 @@
 		9F6A450920D83B0700C598F5 /* SHRestClientExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHRestClientExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F6A450A20D83B0800C598F5 /* ExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleVC.h; sourceTree = "<group>"; };
 		9F6A450B20D83B0800C598F5 /* ExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleVC.m; sourceTree = "<group>"; };
+		9F8AF33D2106D8E800251B11 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9F8ECDBD20CEEE8300A4AAF9 /* SHNetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHNetworkObserver.swift; sourceTree = "<group>"; };
 		9F8ECDCC20D04EDB00A4AAF9 /* NoConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionVC.swift; sourceTree = "<group>"; };
 		9F8ECDD120D0514700A4AAF9 /* no-wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-wifi.png"; sourceTree = "<group>"; };
 		9F8ECDD320D0594400A4AAF9 /* NoConnectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoConnectionVC.xib; sourceTree = "<group>"; };
 		9F9B27B720F3F241003E0883 /* SHSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSessionDataTask.swift; sourceTree = "<group>"; };
-		AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHRestClientExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHRestClientExampleUITests/Pods-SHRestClientExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHRestClientExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8C8F2940A5D300DA97F107 /* Pods_SHRestClientExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E764DAE0526C12A667BE5616 /* Pods_SHRestClientExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC1128C949C2A42D569E32B /* Pods_SHRestClientExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				9F5A3D3F1F8F7E5C00F02FA6 /* README.md */,
+				9F0FA4701F287FBB0012AAF0 /* SHRestClient */,
 				9F0FA4411F287FA60012AAF0 /* SHRestClientExample */,
 				9F0FA4561F287FA60012AAF0 /* SHRestClientExampleTests */,
 				9F0FA4611F287FA60012AAF0 /* SHRestClientExampleUITests */,
 				9F0FA4401F287FA60012AAF0 /* Products */,
-				ADD2A636AFC6A055A3023727 /* Pods */,
-				C3A43A203F51DBA80142EAE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,7 +127,6 @@
 		9F0FA4411F287FA60012AAF0 /* SHRestClientExample */ = {
 			isa = PBXGroup;
 			children = (
-				9F0FA4701F287FBB0012AAF0 /* SHRestClient */,
 				9F6A450820D83ACA00C598F5 /* ObjCExample */,
 				9F0FA4421F287FA60012AAF0 /* AppDelegate.swift */,
 				9F0FA4441F287FA60012AAF0 /* ViewController.swift */,
@@ -176,9 +159,9 @@
 		9F0FA4701F287FBB0012AAF0 /* SHRestClient */ = {
 			isa = PBXGroup;
 			children = (
+				9F8AF33C2106D8D200251B11 /* ReachabilitySwift */,
 				9F8ECDCE20D0506C00A4AAF9 /* Resource */,
 				9F8ECDCB20D04EA800A4AAF9 /* NoConnectionVC */,
-				9F44EC5F20C86947006700FF /* SHHTTPCache.swift */,
 				9F44EC6120C86948006700FF /* SHRestClient.swift */,
 				9F2DFAEF20D124A8002D33AC /* SHRequestMethods.swift */,
 				9F44EC6220C86948006700FF /* SHRequestHelpers.swift */,
@@ -200,6 +183,14 @@
 			path = ObjCExample;
 			sourceTree = "<group>";
 		};
+		9F8AF33C2106D8D200251B11 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				9F8AF33D2106D8E800251B11 /* Reachability.swift */,
+			);
+			path = ReachabilitySwift;
+			sourceTree = "<group>";
+		};
 		9F8ECDCB20D04EA800A4AAF9 /* NoConnectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,29 +208,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		ADD2A636AFC6A055A3023727 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */,
-				422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */,
-				8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */,
-				0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */,
-				AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */,
-				B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C3A43A203F51DBA80142EAE8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BCE82B0382E2F6A9709F88C0 /* Pods_SHRestClientExample.framework */,
-				B093B4EB24E1B1E8D00A500B /* Pods_SHRestClientExampleTests.framework */,
-				B5C25B8F93B63FEDB2EDF2EE /* Pods_SHRestClientExampleUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,11 +215,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F0FA4671F287FA60012AAF0 /* Build configuration list for PBXNativeTarget "SHRestClientExample" */;
 			buildPhases = (
-				F107A2435180D70C362D0E9C /* [CP] Check Pods Manifest.lock */,
 				9F0FA43B1F287FA60012AAF0 /* Sources */,
 				9F0FA43C1F287FA60012AAF0 /* Frameworks */,
 				9F0FA43D1F287FA60012AAF0 /* Resources */,
-				621B063A9A933F3D8DC6D057 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = SubhajitHalder;
 				TargetAttributes = {
 					9F0FA43E1F287FA60012AAF0 = {
@@ -383,24 +349,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		621B063A9A933F3D8DC6D057 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHRestClientExample/Pods-SHRestClientExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AB68DA4DE79C681DA21C4578 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,24 +361,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SHRestClientExampleUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F107A2435180D70C362D0E9C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SHRestClientExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -464,13 +394,13 @@
 			files = (
 				9F8ECDBE20CEEE8300A4AAF9 /* SHNetworkObserver.swift in Sources */,
 				9F0FA4451F287FA60012AAF0 /* ViewController.swift in Sources */,
+				9F8AF33E2106D8E800251B11 /* Reachability.swift in Sources */,
 				9F44EC6920C86948006700FF /* SHClientHelpers.swift in Sources */,
 				9F6A450C20D83B0800C598F5 /* ExampleVC.m in Sources */,
 				9F0FA4431F287FA60012AAF0 /* AppDelegate.swift in Sources */,
 				9F44EC6820C86948006700FF /* SHRequestHelpers.swift in Sources */,
 				9F8ECDCD20D04EDB00A4AAF9 /* NoConnectionVC.swift in Sources */,
 				9F44EC6720C86948006700FF /* SHRestClient.swift in Sources */,
-				9F44EC6520C86948006700FF /* SHHTTPCache.swift in Sources */,
 				9F9B27B820F3F241003E0883 /* SHSessionDataTask.swift in Sources */,
 				9F2DFAF220D1394F002D33AC /* SHResponseLoader.swift in Sources */,
 				9F2DFAF020D124A8002D33AC /* SHRequestMethods.swift in Sources */,
@@ -542,6 +472,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -549,6 +480,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -599,6 +531,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -606,6 +539,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -637,7 +571,6 @@
 		};
 		9F0FA4681F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4128B20BC4E89FD1AC6D2977 /* Pods-SHRestClientExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -655,7 +588,6 @@
 		};
 		9F0FA4691F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 422DC4CBB89B709E534A3A23 /* Pods-SHRestClientExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -672,7 +604,6 @@
 		};
 		9F0FA46B1F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8293DC3106EDD646434F8514 /* Pods-SHRestClientExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -689,7 +620,6 @@
 		};
 		9F0FA46C1F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AF3CA8D8B8EA0A581A16288 /* Pods-SHRestClientExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -706,7 +636,6 @@
 		};
 		9F0FA46E1F287FA60012AAF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB6F8B55861E08B487937C2F /* Pods-SHRestClientExampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;
@@ -722,7 +651,6 @@
 		};
 		9F0FA46F1F287FA60012AAF0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0D8D79AC41CDF3862EEF4D3 /* Pods-SHRestClientExampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = YXUXCVBT88;

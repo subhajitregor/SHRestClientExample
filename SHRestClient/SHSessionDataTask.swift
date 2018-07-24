@@ -27,19 +27,19 @@ final class SHSessionDataTask: NSObject {
 }
 
 extension SHSessionDataTask {
-    public func cancel() {
+    @objc public func cancel() {
         dataTask.cancel()
         if !ProgressHUD.shared.isDisabledByUser {
             ProgressHUD.hide()
         }
     }
     
-    public func resume() {
+    @objc public func resume() {
         dataTask.resume()
         ProgressHUD.show()
     }
     
-    public func suspend() {
+    @objc public func suspend() {
         dataTask.suspend()
         if !ProgressHUD.shared.isDisabledByUser {
             ProgressHUD.hide()
