@@ -26,19 +26,23 @@ import UIKit
         return connection != .none
     }
     
+    
     class func addDelegate(delegate: SHNetworkObserverDelegate) {
         SHNetworkObserver.delegate = delegate
     }
     
+    
     class func removeDelegate(delegate: SHNetworkObserverDelegate) {
         SHNetworkObserver.delegate  = nil
     }
+    
     
     class func recheckConnection() {
         if SHNetworkObserver.delegate != nil {
             SHNetworkObserver.delegate?.networkStatus(isReachable: SHNetworkObserver.isNetworkAvailable)
         }
     }
+    
     
     class func startMonitoring() {
         
@@ -51,9 +55,11 @@ import UIKit
         }
     }
     
+    
     class func presentViewControllerOnNoNetwork(_ viewController: UIViewController) {
         SHNetworkObserver.noConnectionVC = viewController
     }
+    
     
     @objc class func networkStatusChanged(_ notification: Notification) {
         guard let reachability = notification.object as? Reachability else {
@@ -83,6 +89,7 @@ import UIKit
         }
         
     }
+    
     
     class func stopMonitoring() {
         SHNetworkObserver.reachability.stopNotifier()

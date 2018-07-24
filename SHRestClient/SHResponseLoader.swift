@@ -46,9 +46,7 @@ extension SHResponseLoader {
         self.currentSessionDataTask = self.currentSession.dataTask(with: self.request, completionHandler: { (data, response, error) in
             defer {
                 DispatchQueue.main.async {
-                    if !ProgressHUD.shared.isDisabledByUser {
-                        ProgressHUD.hide()
-                    }
+                    ProgressHUD.hide()                    
                 }
             }
             
