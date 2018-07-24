@@ -13,4 +13,25 @@ SHRestClient is more of a boiler plate rather than a normal rest-client, includi
 
 It also supports codables of swift 4. It supports chaining of whole process to make a request for fetching data which helps in easy and minimal coding.
 
-## Example
+## Installation
+
+### CocoaPods
+
+To integrate SHRestClient into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+pod 'SHRestClient'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## Requirements
+
+- iOS 10.3+
+- Swift 4
+
+---
