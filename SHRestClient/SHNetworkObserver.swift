@@ -95,7 +95,7 @@ import UIKit
         
         case .none:
             print("Network Unreachable")
-            if var rootController = UIApplication.shared.keyWindow?.rootViewController {
+            if let rootController = UIApplication.shared.keyWindow?.rootViewController {
                 rootController.present(SHNetworkObserver.noConnectionVC, animated: true, completion: nil)
             }
             
