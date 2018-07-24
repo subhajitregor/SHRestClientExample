@@ -6,7 +6,7 @@
 ![Objective-C Compatible](https://img.shields.io/badge/Objective--C-Compatible-blue.svg?style=flat)
 [![Version](https://img.shields.io/cocoapods/v/SHRestClient.svg?style=flat)](http://cocoapods.org/pods/SHRestClient)
 ![Platform](https://img.shields.io/badge/Platform-iOS-brightgreen.svg?style=flat)
-
+[![License](https://img.shields.io/cocoapods/l/SHRestClient.svg?style=flat)](http://cocoapods.org/pods/SHRestClient)
 
 SHRestClient is a easy to use boiler-plate code free rest-client, including progress hud/_(which you can change or customize)_. It includes Network Observer for watching connectivity which is based upon [ReachabilitySwift Library](https://github.com/ashleymills/Reachability.swift). It can be used for projects for **GET, POST, PUT, DELETE** requests.
 
