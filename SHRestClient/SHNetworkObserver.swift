@@ -26,6 +26,13 @@ import UIKit
         return connection != .none
     }
     
+    class func monitor() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appIsDeactivating(_:)), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appIsActive(_:)), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+        self.startMonitoring()
+    }
     
     class func addDelegate(delegate: SHNetworkObserverDelegate) {
         SHNetworkObserver.delegate = delegate
@@ -46,7 +53,7 @@ import UIKit
     
     class func startMonitoring() {
         
-        NotificationCenter.default.addObserver(SHNetworkObserver.self, selector: #selector(SHNetworkObserver.networkStatusChanged(_:)), name: .reachabilityChanged, object: SHNetworkObserver.reachability)
+        NotificationCenter.default.addObserver(self, selector: #selector(SHNetworkObserver.networkStatusChanged(_:)), name: .reachabilityChanged, object: SHNetworkObserver.reachability)
         
         do {
             try SHNetworkObserver.reachability.startNotifier()
@@ -56,10 +63,25 @@ import UIKit
     }
     
     
+    class func stopMonitoring() {
+        SHNetworkObserver.reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(SHNetworkObserver.self, name: .reachabilityChanged, object: SHNetworkObserver.reachability)
+        
+    }
+    
     class func presentViewControllerOnNoNetwork(_ viewController: UIViewController) {
         SHNetworkObserver.noConnectionVC = viewController
     }
     
+    // MARK: Listeners
+    
+    @objc class func appIsDeactivating(_ notification: Notification) {
+        SHNetworkObserver.stopMonitoring()
+    }
+    
+    @objc class func appIsActive(_ notification: Notification) {
+        SHNetworkObserver.startMonitoring()
+    }
     
     @objc class func networkStatusChanged(_ notification: Notification) {
         guard let reachability = notification.object as? Reachability else {
@@ -88,12 +110,6 @@ import UIKit
             SHNetworkObserver.delegate?.networkStatus(isReachable: reachability.connection != .none)
         }
         
-    }
-    
-    
-    class func stopMonitoring() {
-        SHNetworkObserver.reachability.stopNotifier()
-        NotificationCenter.default.removeObserver(SHNetworkObserver.self, name: .reachabilityChanged, object: SHNetworkObserver.reachability)
     }
     
 }
