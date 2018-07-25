@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SHRestClient'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Easy to use basic rest client.'
  
   s.description      = <<-DESC
