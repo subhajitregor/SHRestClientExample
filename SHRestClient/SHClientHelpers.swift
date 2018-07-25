@@ -78,9 +78,9 @@ extension Data {
     }
 }
 
-class ProgressHUD {
+public class ProgressHUD {
     
-    enum Position {
+    public enum Position {
         case top
         case middle
         case bottom
@@ -118,23 +118,23 @@ class ProgressHUD {
     }
     
     
-    class func setIndicatorColor(_ color: UIColor) {
+    class public func setIndicatorColor(_ color: UIColor) {
         ProgressHUD.shared.indicatorColor = color
     }
     
-    class func disable() {
+    class public func disable() {
         shared.isDisabledByUser = true
     }
     
-    class func setCenter(position: Position) {
+    class public func setCenter(position: Position) {
         shared.position = position
     }
     
-    class func enable() {
+    class public func enable() {
         shared.isDisabledByUser = false
     }
     
-    class func show() {
+    class public func show() {
         shared.indicatorView.color = shared.indicatorColor
         if let window = UIApplication.shared.keyWindow {
             shared.indicatorView.center = shared.position.point
@@ -148,7 +148,7 @@ class ProgressHUD {
         shared.currentlyActive = true
     }
     
-    class func hide() {
+    class public func hide() {
         shared.noOfActivations = shared.noOfActivations - 1
         if shared.noOfActivations == 0 {
             shared.indicatorView.stopAnimating()

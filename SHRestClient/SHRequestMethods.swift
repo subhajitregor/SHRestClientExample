@@ -10,56 +10,56 @@ import Foundation
 
 extension SHRestClient {
     
-    @objc func get(parameters: [String: String]?) -> SHResponseLoader {
+    @objc public func get(parameters: [String: String]?) -> SHResponseLoader {
         self.request.httpMethod = MethodType.get
         self.request.url =
         self.baseURLWithParams(url: self.request.url?.absoluteString ?? "", parameters: parameters)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func postMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
+    @objc public func postMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
         self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func postMultipart(params: [String: Any]) -> SHResponseLoader {
+    @objc public func postMultipart(params: [String: Any]) -> SHResponseLoader {
         self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: nil)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func putMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
+    @objc public func putMultipart(files: [String: Data], params: [String: Any]? = nil ) -> SHResponseLoader {
         self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.put
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: files)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func putMultipart(params: [String: Any]) -> SHResponseLoader {
+    @objc public func putMultipart(params: [String: Any]) -> SHResponseLoader {
         self.contentType("\(ContentType.formData); boundary=\(boundary)")
         self.request.httpMethod = MethodType.put
         self.request.httpBody = self.httpBodyForMultipartParams(parameters: params, dataParams: nil)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func post(fields: [String:String]?) -> SHResponseLoader {
+    @objc public func post(fields: [String:String]?) -> SHResponseLoader {
         self.contentType(ContentType.urlEncoded)
         self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForParams(parameters: fields)
         return SHResponseLoader(rest: self)
     }
     
-    @objc func post(json: [String:Any]?) -> SHResponseLoader {
+    @objc public func post(json: [String:Any]?) -> SHResponseLoader {
         self.contentType(ContentType.json)
         self.request.httpMethod = MethodType.post
         self.request.httpBody = self.httpBodyForJSON(parameters: json)
         return SHResponseLoader(rest: self)
     }
     
-    func post<T: Encodable>(encodable: T, encoder: JSONEncoder = JSONEncoder()) -> SHResponseLoader {
+    public func post<T: Encodable>(encodable: T, encoder: JSONEncoder = JSONEncoder()) -> SHResponseLoader {
         self.contentType(ContentType.json)
         self.request.httpMethod = MethodType.post
         do {
@@ -71,7 +71,7 @@ extension SHRestClient {
         return SHResponseLoader(rest: self)
     }
     
-    @objc func put(fields: [String: String]?) -> SHResponseLoader {
+    @objc public func put(fields: [String: String]?) -> SHResponseLoader {
         self.contentType(ContentType.urlEncoded)
         self.request.httpMethod = MethodType.put
         self.request.httpBody = self.httpBodyForParams(parameters: fields)
@@ -79,14 +79,14 @@ extension SHRestClient {
         
     }
     
-    @objc func put(json: [String: Any]?) -> SHResponseLoader {
+    @objc public func put(json: [String: Any]?) -> SHResponseLoader {
         self.contentType(ContentType.json)
         self.request.httpMethod = MethodType.put
         self.request.httpBody = self.httpBodyForJSON(parameters: json)
         return SHResponseLoader(rest: self)
     }
     
-    func put<T: Encodable>(encodable: T, encoder: JSONEncoder = JSONEncoder()) -> SHResponseLoader {
+    public func put<T: Encodable>(encodable: T, encoder: JSONEncoder = JSONEncoder()) -> SHResponseLoader {
         self.contentType(ContentType.json)
         self.request.httpMethod = MethodType.put
         do {
@@ -98,7 +98,7 @@ extension SHRestClient {
         return SHResponseLoader(rest: self)
     }
     
-    @objc func delete(parameters: [String: String]) -> SHResponseLoader {
+    @objc public func delete(parameters: [String: String]) -> SHResponseLoader {
         self.request.httpMethod = MethodType.delete
         self.request.url =
             self.baseURLWithParams(url: self.request.url?.absoluteString ?? "", parameters: parameters)

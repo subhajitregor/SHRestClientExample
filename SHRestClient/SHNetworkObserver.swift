@@ -26,7 +26,7 @@ import UIKit
         return connection != .none
     }
     
-    class func monitor() {
+    class public func monitor() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(appIsDeactivating(_:)), name: Notification.Name.UIApplicationWillResignActive, object: nil)
         
@@ -34,24 +34,24 @@ import UIKit
         self.startMonitoring()
     }
     
-    class func addDelegate(delegate: SHNetworkObserverDelegate) {
+    class public func addDelegate(delegate: SHNetworkObserverDelegate) {
         SHNetworkObserver.delegate = delegate
     }
     
     
-    class func removeDelegate(delegate: SHNetworkObserverDelegate) {
+    class public func removeDelegate(delegate: SHNetworkObserverDelegate) {
         SHNetworkObserver.delegate  = nil
     }
     
     
-    class func recheckConnection() {
+    class public func recheckConnection() {
         if SHNetworkObserver.delegate != nil {
             SHNetworkObserver.delegate?.networkStatus(isReachable: SHNetworkObserver.isNetworkAvailable)
         }
     }
     
     
-    class func startMonitoring() {
+    class public func startMonitoring() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(SHNetworkObserver.networkStatusChanged(_:)), name: .reachabilityChanged, object: SHNetworkObserver.reachability)
         
@@ -63,27 +63,27 @@ import UIKit
     }
     
     
-    class func stopMonitoring() {
+    class public func stopMonitoring() {
         SHNetworkObserver.reachability.stopNotifier()
         NotificationCenter.default.removeObserver(SHNetworkObserver.self, name: .reachabilityChanged, object: SHNetworkObserver.reachability)
         
     }
     
-    class func presentViewControllerOnNoNetwork(_ viewController: UIViewController) {
+    class public func presentViewControllerOnNoNetwork(_ viewController: UIViewController) {
         SHNetworkObserver.noConnectionVC = viewController
     }
     
     // MARK: Listeners
     
-    @objc class func appIsDeactivating(_ notification: Notification) {
+    @objc class public func appIsDeactivating(_ notification: Notification) {
         SHNetworkObserver.stopMonitoring()
     }
     
-    @objc class func appIsActive(_ notification: Notification) {
+    @objc class public func appIsActive(_ notification: Notification) {
         SHNetworkObserver.startMonitoring()
     }
     
-    @objc class func networkStatusChanged(_ notification: Notification) {
+    @objc class public func networkStatusChanged(_ notification: Notification) {
         guard let reachability = notification.object as? Reachability else {
             print("Notification object is not of type Reachability")
             return

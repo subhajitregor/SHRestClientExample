@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SHSessionDataTask: NSObject {
+final public class SHSessionDataTask: NSObject {
     private let dataTask: URLSessionDataTask
     public var state: URLSessionTask.State { get { return dataTask.state}}
     

@@ -11,8 +11,8 @@ import UIKit
 //import SVProgressHUD
 
 
-typealias ResponseErrorBlock = (Error) -> Void
-typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
+public typealias ResponseErrorBlock = (Error) -> Void
+public typealias ResponseSuccessBlock = (Data?, URLResponse?) -> Void
 
 
 @objc final public class SHRestClient: NSObject {
