@@ -42,7 +42,7 @@ final class ViewController: UIViewController {
         
         restClient.addHeader(key: "Authorization", value: "some value")
             .get(parameters: ["paramsKey":"value"])
-            .fetchData(success: { (data) in
+            .fetchData(success: { (data, response)  in
                 // Raw data fetched
             }) { (error) in
                 //
@@ -57,6 +57,7 @@ final class ViewController: UIViewController {
             }) { (error) in
                 //
         }
+        
         
     }
     

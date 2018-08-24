@@ -26,7 +26,7 @@ final public class SHResponseLoader: NSObject {
 
 extension SHResponseLoader {
     
-    @objc @discardableResult public func fetchRaw(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
+    private func proceedFetching(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         if !ProgressHUD.shared.isDisabledByUser {
             ProgressHUD.show()
         }
@@ -46,7 +46,7 @@ extension SHResponseLoader {
         self.currentSessionDataTask = self.currentSession.dataTask(with: self.request, completionHandler: { (data, response, error) in
             defer {
                 DispatchQueue.main.async {
-                    ProgressHUD.hide()                    
+                    ProgressHUD.hide()
                 }
             }
             
@@ -68,29 +68,32 @@ extension SHResponseLoader {
         return SHSessionDataTask(task: self.currentSessionDataTask)
     }
     
-    @objc @discardableResult public func proceedFetching(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
-        return self.fetchRaw(success: { (data, response) in
-            if data != nil {
-                success(data, response)
-            } else {
-                failure(ResponseErrorType.emptyResponseData)
-            }
-        }) { (error) in
-            failure(error)
-        }
-    }
-    
-    @objc @discardableResult public func fetchData(success: @escaping (_ response: Data) -> Void, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
-        
+    @objc @discardableResult public func fetchData(success: @escaping ResponseSuccessBlock, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
         return self.proceedFetching(success: { (data, response) in
             DispatchQueue.main.async {
-                success(data!)
+                success(data, response)
             }
             
-        }, failure: { (error) in
+        }) { (error) in
             DispatchQueue.main.async {
                 failure(error)
             }
+        }
+    }
+    
+    private func fetchData(success: @escaping (_ response: Data) -> Void, failure: @escaping ResponseErrorBlock) -> SHSessionDataTask {
+        
+        return self.proceedFetching(success: { (data, response) in
+            
+            if let data = data {
+                success(data)
+            } else {
+                failure(ResponseErrorType.decoding)
+            }
+            
+        }, failure: { (error) in
+            
+            failure(error)
             
         })
     }
@@ -106,16 +109,15 @@ extension SHResponseLoader {
             } catch {
                 
                 #if DEBUG
-                
                 do {
-                    print(try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, .mutableContainers]))
+                    print(try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, .mutableContainers, .allowFragments]))
                 } catch {
                     print(error)
                 }
                 #endif
                 
                 DispatchQueue.main.async {
-                    failure(ResponseErrorType.decoding)
+                    failure(error)
                 }
             }
             
@@ -140,17 +142,15 @@ extension SHResponseLoader {
             } catch {
                 
                 #if DEBUG
-                
                 do {
-                    print(try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, .mutableContainers]))
+                    print(try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, .mutableContainers, .allowFragments]))
                 } catch {
                     print(error)
                 }
-                
                 #endif
                 
                 DispatchQueue.main.async {
-                    failure(ResponseErrorType.decoding)
+                    failure(error)
                 }
                 
             }

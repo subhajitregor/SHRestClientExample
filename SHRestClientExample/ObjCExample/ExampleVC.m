@@ -9,6 +9,7 @@
 #import "ExampleVC.h"
 #import "SHRestClientExample-Bridging-Header.h"
 #import "SHRestClientExample-Swift.h"
+//#import "SHClientHelpers-Swift.h"
 //@class SHRestClient;
 
 @interface ExampleVC ()
@@ -20,18 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    [ProgressHUD disable];
 }
 
 
-- (void) getEample {
+- (void)getExample {
     NSString *url = @"";
 
     SHRestClient *restC = [[SHRestClient alloc] init:url];
-    SHSessionDataTask * task = [[restC getWithParameters:@{@"a":@"b"}] fetchDataWithSuccess:^(NSData * _Nonnull data) {
+    SHSessionDataTask * task = [[restC getWithParameters:@{@"a":@"b"}] fetchDataWithSuccess:^(NSData * _Nullable data, NSURLResponse * _Nullable response) {
         //
-    } failure:^(NSError * _Nullable error) {
+    } failure:^(NSError * _Nonnull error) {
         //
-    } ];
+    }];
     
     [task resume];
     
@@ -39,6 +41,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 

@@ -13,21 +13,21 @@ extension SHRestClient {
         self.request.setValue(type, forHTTPHeaderField: "Content-Type")
     }
     
-    @objc @discardableResult func addHeaders(_ headers: [String: String]) -> SHRestClient {
+    @objc @discardableResult public func addHeaders(_ headers: [String: String]) -> SHRestClient {
         for (key, value) in headers {
             self.request.setValue(value, forHTTPHeaderField: key)
         }
         return self
     }
     
-    @objc @discardableResult func addHeader(key: String, value: String) -> SHRestClient {
+    @objc @discardableResult public func addHeader(key: String, value: String) -> SHRestClient {
         
         self.request.setValue(value, forHTTPHeaderField: key)
         
         return self
     }
     
-    @discardableResult func addHeader(_ header: (key: String, value: String)) -> SHRestClient {
+    @discardableResult public func addHeader(_ header: (key: String, value: String)) -> SHRestClient {
         
         self.request.setValue(header.value, forHTTPHeaderField: header.key)
         
